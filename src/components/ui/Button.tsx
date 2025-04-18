@@ -14,10 +14,10 @@ export const Button: FC<ButtonProps> = ({
   className = "",
 }) => {
   const baseStyles =
-    "px-6 py-2 rounded-full font-medium transition-all duration-200";
+    "px-6 py-3 rounded-full font-medium transition-all duration-200 shadow-sm hover:shadow-md active:scale-95";
   const variantStyles = {
-    primary: "bg-primary hover:bg-primary-dark text-white",
-    secondary: "bg-background-card hover:bg-gray-700 text-white",
+    primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+    secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90",
   };
 
   return (

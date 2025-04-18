@@ -24,18 +24,18 @@ export const AboutResumeSection = ({
             onClick={() => setActiveTab("about")}
             className={classNames(
               "text-xl font-semibold transition-colors",
-              activeTab === "about" ? "text-white" : "text-gray-400"
+              activeTab === "about" ? "text-text" : "text-muted-foreground"
             )}
           >
-            A propos de moi
+            À propos de moi
           </button>
           <button
             onClick={() => setActiveTab("resume")}
             className={classNames(
-              "text-xl text-gray-400 hover:text-gray-300 transition-colors",
+              "text-xl transition-colors hover:text-text",
               activeTab === "resume"
-                ? "text-white font-semibold"
-                : "text-gray-400"
+                ? "text-text font-semibold"
+                : "text-muted-foreground"
             )}
           >
             Curriculum vitae
@@ -45,7 +45,7 @@ export const AboutResumeSection = ({
         <div className="transition-all duration-300">
           {activeTab === "about" ? (
             <div className="space-y-4">
-              <p className="text-gray-300 leading-relaxed">{aboutContent}</p>
+              <p className="text-body leading-relaxed">{aboutContent}</p>
             </div>
           ) : (
             <ResumeContent />

@@ -1,55 +1,69 @@
+import { Badge } from "../ui/Badge";
+
+interface Experience {
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+  technologies: string[];
+}
+
+const experiences: Experience[] = [
+  {
+    title: "Frontend Developer",
+    company: "DoctoViene",
+    period: "NOV 2023 - CURRENT",
+    description:
+      "Création d'une application web de service hospitalier avec React et TypeScript. Implémentation de nouvelles fonctionnalités et gestion de projet avec méthodologie Agile SCRUM.",
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Formik",
+      "Tailwind CSS",
+      "Vercel",
+    ],
+  },
+  {
+    title: "UX/UI Designer",
+    company: "DoctoViene",
+    period: "APR 2023 - OCT 2023",
+    description:
+      "Design d'interface utilisateur pour une application de service hospitalier. Optimisation des flux utilisateurs et standardisation de l'information.",
+    technologies: ["Figma", "Adobe XD", "Illustrator"],
+  },
+  {
+    title: "Frontend Developer",
+    company: "PUNU API",
+    period: "AUG 2021 - SEP 2023",
+    description:
+      "Création d'un dictionnaire de langue depuis zéro. Développement de nouvelles fonctionnalités et gestion de projet avec méthodologie Agile.",
+    technologies: ["React", "Styled-Components", "MongoDB", "Vercel"],
+  },
+];
+
 const ResumeContent = () => {
   return (
     <div className="space-y-8">
-      <section className="space-y-4">
-        <h3 className="text-lg font-semibold text-white">Experience</h3>
-        <div className="space-y-6">
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <h4 className="font-medium text-white">Senior UI Designer</h4>
-              <span className="text-sm text-gray-400">2022 - Present</span>
+      {experiences.map((exp, index) => (
+        <div key={index} className="space-y-4">
+          <div className="flex justify-between items-start">
+            <div>
+              <h3 className="text-lg font-semibold text-text">{exp.title}</h3>
+              <p className="text-muted-foreground">{exp.company}</p>
             </div>
-            <p className="text-sm text-gray-300">
-              Lead UI designer for multiple high-profile projects, collaborating
-              closely with development teams and stakeholders.
-            </p>
+            <span className="text-sm text-muted-foreground">{exp.period}</span>
           </div>
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <h4 className="font-medium text-white">UI Designer</h4>
-              <span className="text-sm text-gray-400">2020 - 2022</span>
-            </div>
-            <p className="text-sm text-gray-300">
-              Created intuitive and visually appealing interfaces for web and
-              mobile applications, ensuring optimal user experience.
-            </p>
+          <p className="text-body">{exp.description}</p>
+          <div className="flex flex-wrap gap-2">
+            {exp.technologies.map((tech, techIndex) => (
+              <Badge key={techIndex} variant="secondary">
+                {tech}
+              </Badge>
+            ))}
           </div>
         </div>
-      </section>
-
-      <section className="space-y-4">
-        <h3 className="text-lg font-semibold text-white">Skills</h3>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <h4 className="font-medium text-white">Design</h4>
-            <ul className="space-y-1 text-sm text-gray-300">
-              <li>UI/UX Design</li>
-              <li>Wireframing</li>
-              <li>Prototyping</li>
-              <li>Visual Design</li>
-            </ul>
-          </div>
-          <div className="space-y-2">
-            <h4 className="font-medium text-white">Tools</h4>
-            <ul className="space-y-1 text-sm text-gray-300">
-              <li>Figma</li>
-              <li>Adobe XD</li>
-              <li>Sketch</li>
-              <li>Adobe Photoshop</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      ))}
     </div>
   );
 };

@@ -24,15 +24,19 @@ export const ProfileSection: FC<ProfileSectionProps> = ({ profile }) => {
 
       {/* Profile info */}
       <div className="flex flex-col gap-6">
-        <Card className="flex justify-between items-center">
-          <span className="text-gray-400 text-lg">Name:</span>
-          <h2 className="text-xl font-semibold">{profile.name}</h2>
+        <Card className="flex justify-between items-center gap-4">
+          <span className="text-text-secondary dark:text-gray-400">Name:</span>
+          <h2 className="text-text-primary dark:text-white text-xl font-semibold">
+            {profile.name}
+          </h2>
         </Card>
 
         <Card className="space-y-4">
-          <address className="flex justify-between items-center not-italic">
-            <span className="text-gray-400 text-lg">Résidence:</span>
-            <span className="text-lg font-semibold">
+          <address className="flex justify-between items-center gap-2 not-italic">
+            <span className="text-text-secondary dark:text-gray-400">
+              Résidence:
+            </span>
+            <span className="text-text-primary dark:text-white text-lg font-semibold">
               {profile.location.address}
             </span>
           </address>
@@ -52,7 +56,7 @@ export const ProfileSection: FC<ProfileSectionProps> = ({ profile }) => {
             <Link
               key={social.platform}
               href={social.url}
-              className="p-1 rounded-full transition-all duration-200 hover:bg-primary/20 text-gray-400 hover:text-white"
+              className="p-2 rounded-lg transition-all duration-200 hover:bg-primary/20 text-text-secondary dark:text-gray-400 hover:text-primary dark:hover:text-white"
             >
               {social.icon}
             </Link>
