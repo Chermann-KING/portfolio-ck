@@ -1,22 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/lib/providers";
 import Script from "next/script";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import "./globals.css";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "UI Design Portfolio",
-  description: "Bringing Your Ideas To Life Through UI Design",
+  title: "Hermann Moussavou Portfolio",
+  description:
+    "Portfolio de concepteurs d'interface utilisateur présentant des conceptions créatives et innovantes ainsi que des projets de développement web et mobile.",
 };
 
 export default function RootLayout({
@@ -40,12 +37,14 @@ export default function RootLayout({
       </head>
       <ThemeProvider>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased transition-colors duration-300`}
+          className={`${inter.variable} bg-background text-foreground antialiased transition-colors duration-300`}
           suppressHydrationWarning
         >
-          <main className="container mx-auto px-4 py-8 min-h-screen">
-            {children}
-          </main>
+          <div className="min-h-screen flex md:items-start lg:items-center">
+            <main className="container mx-auto px-4 py-8 w-full">
+              {children}
+            </main>
+          </div>
         </body>
       </ThemeProvider>
     </html>
