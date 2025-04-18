@@ -1,28 +1,51 @@
-// src/theme/colors.ts
-export const colors = {
+interface ColorConfig {
   primary: {
-    DEFAULT: "#8B5CF6", // Purple from the hire me button
-    light: "#A78BFA",
-    dark: "#7C3AED",
-  },
-  secondary: {
-    green: "#10B981", // Stats card green
-    yellow: "#FBBF24", // Stats card yellow
-    pink: "#EC4899", // Stats card pink
+    DEFAULT: string;
+    dark: string;
+    light: string;
+  };
+  background: {
+    DEFAULT: string;
+    dark: string;
+    card: {
+      DEFAULT: string;
+      dark: string;
+    };
+  };
+  text: {
+    primary: {
+      DEFAULT: string;
+      dark: string;
+    };
+    secondary: {
+      DEFAULT: string;
+      dark: string;
+    };
+  };
+}
+
+export const colors: ColorConfig = {
+  primary: {
+    DEFAULT: "#7C3AED",
+    dark: "#6D28D9",
+    light: "#8B5CF6",
   },
   background: {
-    dark: "#121212",
-    card: "#1E1E1E",
-    light: "#FFFFFF",
+    DEFAULT: "#FFFFFF",
+    dark: "#1A1B1E",
+    card: {
+      DEFAULT: "#F4F4F5",
+      dark: "#2A2B2E",
+    },
   },
   text: {
     primary: {
-      light: "#1F2937",
+      DEFAULT: "#18181B",
       dark: "#FFFFFF",
     },
     secondary: {
-      light: "#6B7280",
-      dark: "#9CA3AF",
+      DEFAULT: "#71717A",
+      dark: "#A1A1AA",
     },
   },
 };

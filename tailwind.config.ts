@@ -12,29 +12,24 @@ export default {
     extend: {
       colors: {
         primary: colors.primary,
-        secondary: colors.secondary,
         background: colors.background,
         text: colors.text,
       },
-      // colors: {
-      //   background: {
-      //     DEFAULT: "hsl(var(--background))",
-      //     card: "hsl(var(--card))",
-      //   },
-      //   foreground: "hsl(var(--foreground))",
-      //   primary: {
-      //     DEFAULT: "hsl(var(--primary))",
-      //     foreground: "hsl(var(--primary-foreground))",
-      //   },
-      // },
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0", transform: "translateY(10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+      backgroundColor: {
+        "background-card": {
+          DEFAULT: colors.background.card.DEFAULT,
+          dark: colors.background.card.dark,
         },
       },
-      animation: {
-        fadeIn: "fadeIn 0.3s ease-out",
+      textColor: {
+        "text-primary": {
+          DEFAULT: colors.text.primary.DEFAULT,
+          dark: colors.text.primary.dark,
+        },
+        "text-secondary": {
+          DEFAULT: colors.text.secondary.DEFAULT,
+          dark: colors.text.secondary.dark,
+        },
       },
     },
   },
