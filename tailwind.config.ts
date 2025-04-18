@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { colors } from "./src/theme/colors";
 
 export default {
   content: [
@@ -11,25 +10,45 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: colors.primary,
-        background: colors.background,
-        text: colors.text,
-      },
-      backgroundColor: {
-        "background-card": {
-          DEFAULT: colors.background.card.DEFAULT,
-          dark: colors.background.card.dark,
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        body: "hsl(var(--text-body))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
       },
-      textColor: {
-        "text-primary": {
-          DEFAULT: colors.text.primary.DEFAULT,
-          dark: colors.text.primary.dark,
-        },
-        "text-secondary": {
-          DEFAULT: colors.text.secondary.DEFAULT,
-          dark: colors.text.secondary.dark,
-        },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },

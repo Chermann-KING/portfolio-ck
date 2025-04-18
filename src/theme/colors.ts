@@ -31,21 +31,21 @@ export const colors: ColorConfig = {
     light: "#8B5CF6",
   },
   background: {
-    DEFAULT: "#FFFFFF",
-    dark: "#1A1B1E",
+    DEFAULT: "#FAFAFA",
+    dark: "#121212",
     card: {
-      DEFAULT: "#F4F4F5",
-      dark: "#2A2B2E",
+      DEFAULT: "#FFFFFF",
+      dark: "#1E1E1E",
     },
   },
   text: {
     primary: {
-      DEFAULT: "#18181B",
+      DEFAULT: "#111827",
       dark: "#FFFFFF",
     },
     secondary: {
-      DEFAULT: "#71717A",
-      dark: "#A1A1AA",
+      DEFAULT: "#4B5563",
+      dark: "#D1D5DB",
     },
   },
 };

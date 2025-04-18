@@ -10,9 +10,9 @@ export const ThemeToggle: FC = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="rounded-full bg-background-card flex items-center justify-center transition-colors hover:bg-gray-700"
+      className="rounded-full bg-background-card dark:bg-background-card-dark flex items-center justify-center p-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700"
     >
-      {theme === "dark" ? <Sun /> : <Moon />}
+      {theme === "dark" ? <Sun className="text-white" /> : <Moon />}
     </button>
   );
 };
