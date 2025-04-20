@@ -25,7 +25,7 @@ export const ProfileSection: FC<ProfileSectionProps> = ({ profile }) => {
       {/* Profile info */}
       <div className="flex flex-col gap-6">
         <Card className="flex justify-between items-center gap-4">
-          <span className="text-text-secondary dark:text-gray-400">Name:</span>
+          <span className="text-text-secondary dark:text-gray-400">Nom:</span>
           <h2 className="text-text-primary dark:text-white text-xl font-semibold">
             {profile.name}
           </h2>

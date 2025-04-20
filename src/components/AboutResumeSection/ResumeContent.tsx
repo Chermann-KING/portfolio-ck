@@ -12,7 +12,7 @@ const experiences: Experience[] = [
   {
     title: "Frontend Developer",
     company: "DoctoViene",
-    period: "NOV 2023 - CURRENT",
+    period: "NOV. 2023 - AUJOURD'HUI",
     description:
       "Création d'une application web de service hospitalier avec React et TypeScript. Implémentation de nouvelles fonctionnalités et gestion de projet avec méthodologie Agile SCRUM.",
     technologies: [
@@ -27,15 +27,15 @@ const experiences: Experience[] = [
   {
     title: "UX/UI Designer",
     company: "DoctoViene",
-    period: "APR 2023 - OCT 2023",
+    period: "AVR. 2023 - OCT 2023",
     description:
       "Design d'interface utilisateur pour une application de service hospitalier. Optimisation des flux utilisateurs et standardisation de l'information.",
     technologies: ["Figma", "Adobe XD", "Illustrator"],
   },
   {
-    title: "Frontend Developer",
-    company: "PUNU API",
-    period: "AUG 2021 - SEP 2023",
+    title: "Fullstack Developer",
+    company: "O'YPUNU",
+    period: "JAN. 2023 - AUJOURD'HUI",
     description:
       "Création d'un dictionnaire de langue depuis zéro. Développement de nouvelles fonctionnalités et gestion de projet avec méthodologie Agile.",
     technologies: ["React", "Styled-Components", "MongoDB", "Vercel"],

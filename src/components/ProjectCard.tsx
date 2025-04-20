@@ -20,7 +20,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           />
         </div>
         <div className="p-6 space-y-2">
-          <div className="flex justify-between items-start">
+          <div className="flex justify-between items-start gap-4">
             <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
               {project.title}
             </h3>

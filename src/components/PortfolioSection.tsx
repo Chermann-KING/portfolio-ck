@@ -7,24 +7,24 @@ import { Card } from "./ui/Card";
 const portfolioItems = [
   {
     id: "1",
-    title: "Dictionnaire d'anglais",
+    title: "English dictionary",
     imageUrl: "/images/projects/keyboard/eng-dico-api-light.png",
     category: "Web App",
-    slug: "keyboard",
+    slug: "dictionaire",
   },
   {
     id: "2",
     title: "Invoices",
     imageUrl: "/images/projects/invoices/invoices-app-light.png",
-    category: "Web Development",
-    slug: "invoices",
+    category: "Web App",
+    slug: "factures",
   },
   {
     id: "3",
-    title: "Apprenez l'algorithmique",
+    title: "Learn algorithms",
     imageUrl: "/images/projects/algorithm/algorithm-learn-app-light.png",
-    category: "Mobile Development",
-    slug: "algorithm-learn",
+    category: "Web App",
+    slug: "algorithme-apprentissage",
   },
 ];
 

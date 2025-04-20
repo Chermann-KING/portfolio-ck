@@ -32,7 +32,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {/* En-tête du projet */}
       <div className="space-y-6 mb-12">
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between items-start gap-8">
           <div>
             <h1 className="text-4xl font-bold">{project.title}</h1>
             <p className="text-xl text-muted-foreground mt-2">
@@ -41,7 +41,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
           <div className="flex gap-4">
             {project.liveUrl && (
-              <Button asChild>
+              <Button className="w-[142px] min-w-[142px]" asChild>
                 <a
                   href={project.liveUrl}
                   target="_blank"
@@ -52,7 +52,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </Button>
             )}
             {project.githubUrl && (
-              <Button variant="outline" asChild>
+              <Button
+                variant="outline"
+                className="w-[142px] min-w-[142px]"
+                asChild
+              >
                 <a
                   href={project.githubUrl}
                   target="_blank"
@@ -138,7 +142,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <dl className="space-y-4">
               <div>
                 <dt className="text-sm text-muted-foreground">
-                  Durée du projet
+                  Durée du projet (WakaTime)
                 </dt>
                 <dd className="text-base">{project.duration}</dd>
               </div>
@@ -147,7 +151,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <dd className="text-base">{project.role}</dd>
               </div>
               <div>
-                <dt className="text-sm text-muted-foreground">Équipe</dt>
+                <dt className="text-sm text-muted-foreground">Client</dt>
                 <dd className="text-base">{project.team}</dd>
               </div>
             </dl>
