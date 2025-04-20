@@ -16,6 +16,7 @@ export interface Project {
   }[];
   liveUrl?: string;
   githubUrl?: string;
+  isHighlighted: boolean;
 }
 
 const projects: Project[] = [
@@ -51,6 +52,7 @@ const projects: Project[] = [
     ],
     liveUrl: "https://dictionary-web-app-brown-nu.vercel.app/",
     githubUrl: "https://github.com/Chermann-KING/dictionary-web-app",
+    isHighlighted: true,
   },
   {
     slug: "factures",
@@ -85,6 +87,7 @@ const projects: Project[] = [
     ],
     liveUrl: "https://invoices-app-nine.vercel.app",
     githubUrl: "https://github.com/Chermann-KING/invoices-app",
+    isHighlighted: true,
   },
   {
     slug: "audiophile",
@@ -124,6 +127,7 @@ const projects: Project[] = [
     ],
     liveUrl: "https://audiophile-one-mu.vercel.app/",
     githubUrl: "https://github.com/Chermann-KING/audiophile",
+    isHighlighted: true,
   },
   {
     slug: "ck-garage-manager",
@@ -173,6 +177,7 @@ const projects: Project[] = [
     ],
     liveUrl: "https://ck-garage-manager.vercel.app",
     githubUrl: "https://github.com/Chermann-KING/ck-garage-manager",
+    isHighlighted: false,
   },
 ];
 
@@ -183,4 +188,8 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 
 export async function getAllProjects(): Promise<Project[]> {
   return projects;
+}
+
+export async function getHighlightedProjects(): Promise<Project[]> {
+  return projects.filter((project) => project.isHighlighted).slice(0, 3);
 }
