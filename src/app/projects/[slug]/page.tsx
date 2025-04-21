@@ -48,6 +48,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${project.title} - Projet | Hermann MOUSSAVOU`,
     description: project.shortDescription,
     image: project.coverImage,
+    canonical: `/projects/${project.slug}`,
+    type: "article",
+    project: {
+      title: project.title,
+      description: project.shortDescription,
+      technologies: project.technologies,
+      liveUrl: project.liveUrl,
+      githubUrl: project.githubUrl,
+      image: project.coverImage,
+      datePublished: new Date().toISOString(),
+    },
   });
 }
 
