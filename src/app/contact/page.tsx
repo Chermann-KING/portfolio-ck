@@ -1,17 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { BackButton } from "@/components/ui/BackButton";
-import { useRef } from "react";
 
 interface FormData {
   name: string;
   email: string;
   company?: string;
   message: string;
-  honeypot?: string; // Champ honeypot pour détecter les bots
+  honeypot?: string;
 }
 
 export default function ContactPage() {

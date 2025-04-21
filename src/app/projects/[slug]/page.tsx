@@ -4,23 +4,62 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { BackButton } from "@/components/ui/BackButton";
-import { getProjectBySlug } from "@/lib/projects";
+import { getProjectBySlug, getAllProjects } from "@/lib/projects";
+import { constructMetadata } from "@/lib/metadata";
+import type { Metadata } from "next";
 
-// Marquer la page comme dynamique
-export const dynamic = "force-dynamic";
+export const dynamicParams = true;
 
-interface ProjectPageProps {
-  params: {
-    slug: string;
-  };
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateStaticParams() {
+  const projects = await getAllProjects();
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  if (!params?.slug) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const resolvedParams = await params;
+  const slug = resolvedParams?.slug;
+
+  if (!slug) {
+    return constructMetadata({
+      title: "Projet non trouvé",
+      description: "Le projet que vous recherchez n'existe pas.",
+      noIndex: true,
+    });
+  }
+
+  const project = await getProjectBySlug(slug);
+
+  if (!project) {
+    return constructMetadata({
+      title: "Projet non trouvé",
+      description: "Le projet que vous recherchez n'existe pas.",
+      noIndex: true,
+    });
+  }
+
+  return constructMetadata({
+    title: `${project.title} - Projet | Hermann MOUSSAVOU`,
+    description: project.shortDescription,
+    image: project.coverImage,
+  });
+}
+
+export default async function ProjectPage({ params }: Props) {
+  const resolvedParams = await params;
+  const slug = resolvedParams?.slug;
+
+  if (!slug) {
     notFound();
   }
 
-  const project = await getProjectBySlug(params.slug);
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     notFound();
