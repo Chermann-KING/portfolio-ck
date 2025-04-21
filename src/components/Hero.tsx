@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Hand } from "lucide-react";
 import { Card } from "./ui/Card";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -15,10 +16,12 @@ export function Hero() {
             percutantes.
           </span>
         </h1>
-        <Button variant="primary" className="absolute bottom-0 right-2">
-          <span className="flex items-center gap-2">
-            Embauchez-moi <Hand className="w-5 h-5" />
-          </span>
+        <Button variant="primary" className="absolute bottom-0 right-2" asChild>
+          <Link href="/contact">
+            <span className="flex items-center gap-2">
+              Embauchez-moi <Hand className="w-5 h-5" />
+            </span>
+          </Link>
         </Button>
       </div>
     </Card>
