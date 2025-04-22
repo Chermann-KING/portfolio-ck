@@ -10,6 +10,7 @@ import { constructMetadata } from "@/lib/metadata";
 import { Suspense } from "react";
 import { Card } from "@/components/ui/Card";
 import { Footer } from "@/components/Footer";
+import { Badge } from "@/components/ui/Badge";
 
 export const metadata = constructMetadata();
 
@@ -35,6 +36,32 @@ async function ProfileData() {
             </Card>
           </div>
         </div>
+        <div className="p-4 overflow-hidden flex items-center justify-center gap-10">
+          <Badge
+            variant="default"
+            className="font-bold tracking-wider py-3 px-5"
+          >
+            DÉVELOPPER
+          </Badge>
+          <Badge
+            variant="default"
+            className="font-bold tracking-wider py-3 px-5"
+          >
+            ÉVALUER
+          </Badge>
+          <Badge
+            variant="default"
+            className="font-bold tracking-wider py-3 px-5"
+          >
+            TIRER DES ENSEIGNEMENTS
+          </Badge>
+          <Badge
+            variant="default"
+            className="font-bold tracking-wider py-3 px-5"
+          >
+            AMÉLIORER
+          </Badge>
+        </div>
         <AboutResumeSection aboutContent={profile.bio} />
       </>
     );
@@ -53,6 +80,7 @@ export default function HomePage() {
         <Suspense fallback={<div>Chargement...</div>}>
           <ProfileData />
         </Suspense>
+
         <PortfolioSection />
       </main>
       <Footer />
