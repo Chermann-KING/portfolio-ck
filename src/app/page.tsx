@@ -9,6 +9,7 @@ import { AboutResumeSection } from "@/components/AboutResumeSection";
 import { constructMetadata } from "@/lib/metadata";
 import { Suspense } from "react";
 import { Card } from "@/components/ui/Card";
+import { Footer } from "@/components/Footer";
 
 export const metadata = constructMetadata();
 
@@ -47,13 +48,14 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main className="container mx-auto space-y-12 py-12 px-4">
+      <main className="container mx-auto space-y-12 pt-12 px-4">
         <Hero />
         <Suspense fallback={<div>Chargement...</div>}>
           <ProfileData />
         </Suspense>
         <PortfolioSection />
       </main>
+      <Footer />
     </>
   );
 }

@@ -12,7 +12,7 @@ export const ProfileSection: FC<ProfileSectionProps> = ({ profile }) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {/* Profile photo */}
-      <div className="relative aspect-auto w-full bg-primary rounded-2xl overflow-hidden">
+      <div className="relative aspect-auto w-full bg-card rounded-2xl overflow-hidden shadow-lg">
         <Image
           src={profile.avatar}
           alt={profile.name}
@@ -41,7 +41,7 @@ export const ProfileSection: FC<ProfileSectionProps> = ({ profile }) => {
               {profile.location.address}
             </span>
           </address>
-          <div className="relative aspect-[2/1] w-full rounded-xl overflow-hidden">
+          <div className="relative aspect-[calc(4*3+1)/9] w-full rounded-xl overflow-hidden">
             <Image
               src={profile.location.imgMap}
               alt={profile.location.address}

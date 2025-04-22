@@ -12,8 +12,24 @@ const skillsData = {
     "TailwindCSS",
     "SCSS",
   ],
-  "Back-end": ["Node.js", "Express", "NestJS", "SQL", "PostgreSQL", "MongoDB"],
-  Autres: ["Git", "Agile", "Scrum", "UX/UI", "Figma", "Postman", "WordPress"],
+  "Back-end": [
+    "Node.js",
+    "Express",
+    "NestJS",
+    "SQL",
+    "PostgreSQL",
+    "Sequelize",
+    "MongoDB",
+  ],
+  Autres: [
+    "Git",
+    "Agile/Scrum",
+    "Graphic Design",
+    "UX/UI",
+    "Figma",
+    "Postman",
+    "WordPress",
+  ],
 };
 
 export async function getProfileData(): Promise<UserProfile> {
@@ -25,7 +41,7 @@ export async function getProfileData(): Promise<UserProfile> {
       imgMap: "/images/location-light-2.png",
     },
     bio: "Développeur full-stack passionné et innovant, combinant une expertise avancée en front-end avec des compétences solides en back-end. Impliqué dans des projets innovants, je conçois des applications web performantes et scalables. Curieux, créatif, résolument collaboratif et orienté solutions, je suis déterminé à transformer vos idées en produits numériques de qualité.",
-    avatar: "/images/ck.png",
+    avatar: "/images/ck-class.png",
     stats: {
       yearsExperience: "3+",
       projectsCount: "12+",

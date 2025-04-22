@@ -44,7 +44,7 @@ export function SkillsSection({ skills = {} }: SkillsSectionProps) {
         <h2 className="text-xl font-semibold">Compétences</h2>
       </div>
 
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 gap-3">
         {categories.map((category) => {
           const skillsList = skillsData[category] || [];
 

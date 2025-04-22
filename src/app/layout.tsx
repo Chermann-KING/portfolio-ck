@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/lib/providers";
 import Script from "next/script";
+// import { Footer } from "@/components/Footer";
 
 import "./globals.css";
 
@@ -40,8 +41,10 @@ export default function RootLayout({
           className={`${inter.variable} bg-background text-foreground antialiased transition-colors duration-300`}
           suppressHydrationWarning
         >
-          <div className="min-h-screen flex md:items-start lg:items-center">
-            <div className="container mx-auto px-4 py-8 w-full">{children}</div>
+          <div className="min-h-screen flex flex-col">
+            <main className="container mx-auto px-4 pt-8 w-full flex-grow">
+              {children}
+            </main>
           </div>
         </body>
       </ThemeProvider>
