@@ -17,6 +17,7 @@ export const ProfileSection: FC<ProfileSectionProps> = ({ profile }) => {
           src={profile.avatar}
           alt={profile.name}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
           priority
         />
@@ -45,6 +46,7 @@ export const ProfileSection: FC<ProfileSectionProps> = ({ profile }) => {
               src={profile.location.imgMap}
               alt={profile.location.address}
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </div>

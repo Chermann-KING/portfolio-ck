@@ -29,6 +29,9 @@ export interface UserProfile {
     clientsCount: string;
   };
   social: SocialLinkProps[];
+  skills: {
+    [category: string]: string[];
+  };
 }
 
 export interface PortfolioItemProps {
@@ -36,20 +39,4 @@ export interface PortfolioItemProps {
   title: string;
   imageUrl: string;
   category: string;
-}
-
-export interface UserProfile {
-  name: string;
-  location: {
-    address: string;
-    imgMap: string;
-  };
-  bio: string;
-  avatar: string;
-  stats: {
-    yearsExperience: string;
-    projectsCount: string;
-    clientsCount: string;
-  };
-  social: SocialLinkProps[];
 }

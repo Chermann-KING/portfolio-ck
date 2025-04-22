@@ -27,7 +27,7 @@ export default function RootLayout({
         <Script id="theme-script" strategy="beforeInteractive">
           {`
             try {
-              const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+              const theme = localStorage.getItem('theme') || 'dark';
               document.documentElement.classList.add(theme);
             } catch (e) {
               document.documentElement.classList.add('dark');
@@ -41,9 +41,7 @@ export default function RootLayout({
           suppressHydrationWarning
         >
           <div className="min-h-screen flex md:items-start lg:items-center">
-            <main className="container mx-auto px-4 py-8 w-full">
-              {children}
-            </main>
+            <div className="container mx-auto px-4 py-8 w-full">{children}</div>
           </div>
         </body>
       </ThemeProvider>

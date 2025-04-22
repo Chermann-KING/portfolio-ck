@@ -86,3 +86,7 @@
     @apply translate-y-0;
   }
 }
+
+body {
+  cursor: default;
+}
