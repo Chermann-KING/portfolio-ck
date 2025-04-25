@@ -11,6 +11,8 @@ import { Suspense } from "react";
 import { Card } from "@/components/ui/Card";
 import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/Badge";
+import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection";
+import { TestimonialsData } from "@/lib/testimonials-data";
 
 export const metadata = constructMetadata();
 
@@ -36,6 +38,7 @@ async function ProfileData() {
             </Card>
           </div>
         </div>
+        {/* Méthodologie de travail */}
         <div className="p-4 overflow-hidden flex items-center justify-center gap-10">
           <Badge
             variant="default"
@@ -82,6 +85,7 @@ export default function HomePage() {
         </Suspense>
 
         <PortfolioSection />
+        <TestimonialsSection testimonials={TestimonialsData.testimonials} />
       </main>
       <Footer />
     </>

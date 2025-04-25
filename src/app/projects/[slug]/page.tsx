@@ -10,9 +10,9 @@ import type { Metadata } from "next";
 
 export const dynamicParams = true;
 
-type Props = {
-  params: Promise<{ slug: string }>;
-  searchParams: { [key: string]: string | string[] | undefined };
+// Définition correcte des props pour Next.js 15.3.1
+type PageParams = {
+  slug: string;
 };
 
 export async function generateStaticParams() {
@@ -22,9 +22,13 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
   const resolvedParams = await params;
-  const slug = resolvedParams?.slug;
+  const slug = resolvedParams.slug;
 
   if (!slug) {
     return constructMetadata({
@@ -50,21 +54,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     image: project.coverImage,
     canonical: `/projects/${project.slug}`,
     type: "article",
-    project: {
-      title: project.title,
-      description: project.shortDescription,
-      technologies: project.technologies,
-      liveUrl: project.liveUrl,
-      githubUrl: project.githubUrl,
-      image: project.coverImage,
-      datePublished: new Date().toISOString(),
-    },
   });
 }
 
-export default async function ProjectPage({ params }: Props) {
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<PageParams>;
+}) {
   const resolvedParams = await params;
-  const slug = resolvedParams?.slug;
+  const slug = resolvedParams.slug;
 
   if (!slug) {
     notFound();
@@ -121,7 +120,7 @@ export default async function ProjectPage({ params }: Props) {
 
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
-            <Badge key={tech} variant="secondary">
+            <Badge key={tech} variant="default">
               {tech}
             </Badge>
           ))}

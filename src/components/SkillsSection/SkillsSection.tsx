@@ -76,7 +76,7 @@ export function SkillsSection({ skills = {} }: SkillsSectionProps) {
                     skillsList.map((skill) => (
                       <Badge
                         key={skill}
-                        variant="outline"
+                        variant="default"
                         className={`${style.text} border-current text-xs py-0.5 px-2`}
                       >
                         {skill}
