@@ -12,6 +12,14 @@ export interface TestimonialsData {
 export const TestimonialsData: TestimonialsData = {
   testimonials: [
     {
+      name: "Louis-Marie Bourgeois",
+      role: "Directeur des Systèmes d'Information",
+      company: "Informatique Avancée",
+      content:
+        "Un développeur très compétent et passionné par son travail. Il a su s'intégrer rapidement à notre équipe et a apporté des idées novatrices.",
+      rating: 4,
+    },
+    {
       name: "Jean Dupont",
       role: "Directeur Technique",
       company: "Tech Solutions",
