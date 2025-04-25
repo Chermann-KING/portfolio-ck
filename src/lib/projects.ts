@@ -21,6 +21,60 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    slug: "personal-finance",
+    title: "Finance Personnelle",
+    shortDescription:
+      "Application web complète de gestion financière permettant le suivi des dépenses, la gestion de budget et l'épargne",
+    context:
+      "Ce projet est né du besoin de créer une solution complète de gestion financière personnelle. L'objectif était de développer une application qui permet aux utilisateurs de suivre leurs dépenses, gérer leurs budgets, et atteindre leurs objectifs d'épargne de manière intuitive et sécurisée.",
+    challenges:
+      "Les principaux défis techniques incluaient la mise en place d'un système d'authentification robuste, la gestion en temps réel des transactions financières, et la création d'une interface utilisateur intuitive pour visualiser les données financières complexes. La sécurisation des données sensibles et la performance de l'application avec une grande quantité de transactions ont également été des aspects cruciaux.",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Tailwind CSS",
+    ],
+    duration: "135 heures 39 minutes",
+    role: "Développeur Full Stack",
+    team: "Frontend Mentor",
+    keyPoints: [
+      "Système d'authentification sécurisé avec JWT",
+      "Suivi en temps réel des transactions et du solde",
+      "Gestion de budget par catégorie",
+      "Système de pots d'épargne avec objectifs",
+      "Interface responsive et moderne",
+      "Visualisation des données financières",
+      "Gestion des factures et paiements récurrents",
+    ],
+    coverImage: "/images/projects/personal-finance/overview.png",
+    gallery: [
+      {
+        url: "/images/projects/personal-finance/transactions.png",
+        caption: "Interface de gestion des transactions",
+      },
+
+      {
+        url: "/images/projects/personal-finance/budgets.png",
+        caption: "Suivi des budgets par catégorie",
+      },
+      {
+        url: "/images/projects/personal-finance/pots.png",
+        caption: "Gestion des pots d'épargne",
+      },
+      {
+        url: "/images/projects/personal-finance/currenting-bills.png",
+        caption: "Gestion des factures et paiements récurrents",
+      },
+    ],
+    liveUrl: "https://personal-finance-app-two.vercel.app",
+    githubUrl: "https://github.com/Chermann-KING/personal-finance-app",
+    isHighlighted: true,
+  },
+  {
     slug: "dictionaire",
     title: "Dictionaire",
     shortDescription:
@@ -52,7 +106,7 @@ const projects: Project[] = [
     ],
     liveUrl: "https://dictionary-web-app-brown-nu.vercel.app/",
     githubUrl: "https://github.com/Chermann-KING/dictionary-web-app",
-    isHighlighted: true,
+    isHighlighted: false,
   },
   {
     slug: "factures",

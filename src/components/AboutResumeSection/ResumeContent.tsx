@@ -57,7 +57,7 @@ const ResumeContent = () => {
           <p className="text-body">{exp.description}</p>
           <div className="flex flex-wrap gap-2">
             {exp.technologies.map((tech, techIndex) => (
-              <Badge key={techIndex} variant="secondary">
+              <Badge key={techIndex} variant="other">
                 {tech}
               </Badge>
             ))}
