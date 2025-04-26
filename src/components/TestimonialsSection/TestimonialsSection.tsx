@@ -124,7 +124,7 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
                         className="rounded-full mr-4"
                       />
                     ) : (
-                      <div className="w-12 h-12 max-h-12 rounded-full bg-gray-300 dark:bg-gray-600 mr-4 flex items-center justify-center">
+                      <div className="w-12 h-12 min-w-12 min-h-12 rounded-full bg-gray-300 dark:bg-gray-600 mr-4 flex items-center justify-center">
                         <span className="text-xl font-semibold text-gray-600 dark:text-gray-300">
                           {testimonial.name.charAt(0)}
                         </span>
