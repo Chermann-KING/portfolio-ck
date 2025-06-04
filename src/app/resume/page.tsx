@@ -62,10 +62,10 @@ export default function ResumePage() {
             <div>
               <div className="flex justify-between items-start mb-2">
                 <h3 className="text-xl font-medium">
-                  DoctoViene - Développeur Frontend (Freelance)
+                  DoctoViene - Développeur Frontend (CompanyViene)
                 </h3>
                 <span className="text-muted-foreground">
-                  NOV. 2023 - AJOURD&apos;HUI
+                  NOV. 2023 - AUJOURD&apos;HUI
                 </span>
               </div>
               <p className="text-muted-foreground italic mb-2">
@@ -128,7 +128,7 @@ export default function ResumePage() {
                   O&apos;YPUNU - Développeur Full Stack (Personnel)
                 </h3>
                 <span className="text-muted-foreground">
-                  AOU. 2022 - AJOURD&apos;HUI
+                  AOU. 2022 - AUJOURD&apos;HUI
                 </span>
               </div>
               <p className="text-muted-foreground italic mb-2">

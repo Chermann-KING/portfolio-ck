@@ -7,12 +7,13 @@ import Header from "@/components/Header";
 import { getProfileData } from "@/lib/profile-data";
 import { AboutResumeSection } from "@/components/AboutResumeSection";
 import { constructMetadata } from "@/lib/metadata";
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import { Card } from "@/components/ui/Card";
 import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/Badge";
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection";
 import { TestimonialsData } from "@/lib/testimonials-data";
+import { AnimatedCard } from "@/lib/AnimatedCard";
 
 export const metadata = constructMetadata();
 
@@ -33,9 +34,11 @@ async function ProfileData() {
             <div className="grid grid-cols-1 gap-4">
               <StatsSection stats={profile.stats} />
             </div>
-            <Card className="p-4 overflow-hidden">
-              <SkillsSection skills={profile.skills} />
-            </Card>
+            <AnimatedCard direction="up" delay={350}>
+              <Card className="p-4 overflow-hidden">
+                <SkillsSection skills={profile.skills} />
+              </Card>
+            </AnimatedCard>
           </div>
         </div>
         {/* Méthodologie de travail */}
@@ -80,9 +83,9 @@ export default function HomePage() {
       <Header />
       <main className="container mx-auto space-y-12 pt-12 px-4">
         <Hero />
-        <Suspense fallback={<div>Chargement...</div>}>
-          <ProfileData />
-        </Suspense>
+        {/* <Suspense fallback={<div>Chargement...</div>}> */}
+        <ProfileData />
+        {/* </Suspense> */}
 
         <PortfolioSection />
         <TestimonialsSection testimonials={TestimonialsData.testimonials} />

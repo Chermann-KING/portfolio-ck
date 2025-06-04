@@ -35,7 +35,7 @@ const experiences: Experience[] = [
   {
     title: "Fullstack Developer",
     company: "O'YPUNU",
-    period: "AOU. 2022 - AJOURD'HUI",
+    period: "AOU. 2022 - AUJOURD'HUI",
     description:
       "Création d'une Plateforme de Dictionnaire Social. Développement de nouvelles fonctionnalités et gestion de projet avec méthodologie Agile.",
     technologies: ["Angular", "Tailwind CSS", "MongoDB"],

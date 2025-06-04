@@ -5,6 +5,7 @@ import { Card } from "./ui/Card";
 import { AlignJustify } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import Link from "next/link";
+import { AnimatedCard } from "@/lib/AnimatedCard";
 
 const menuItems = [
   { name: "CV", href: "/resume" },
@@ -35,48 +36,50 @@ export default function Header() {
 
   return (
     <header className="relative">
-      <Card className="flex justify-between items-center gap-4 text-xl">
-        <h2 className="text-text-secondary dark:text-gray-400">
-          Développeur
-          <span className="text-text-primary dark:text-white font-semibold">
-            {" "}
-            FullStack
-          </span>
-        </h2>
-        <div className="flex gap-4">
-          <ThemeToggle />
-          <button
-            ref={buttonRef}
-            className="font-semibold relative"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-expanded={isMenuOpen}
-            aria-label="Menu principal"
-          >
-            <AlignJustify />
-          </button>
-        </div>
-      </Card>
-
-      {/* Menu contextuel */}
-      {isMenuOpen && (
-        <div
-          ref={menuRef}
-          className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-background border border-border z-50"
-        >
-          <div className="py-1">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+      <AnimatedCard direction="up" delay={100}>
+        <Card className="flex justify-between items-center gap-4 text-xl">
+          <h2 className="text-text-secondary dark:text-gray-400">
+            Développeur
+            <span className="text-text-primary dark:text-white font-semibold">
+              {" "}
+              FullStack
+            </span>
+          </h2>
+          <div className="flex gap-4">
+            <ThemeToggle />
+            <button
+              ref={buttonRef}
+              className="font-semibold relative"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-label="Menu principal"
+            >
+              <AlignJustify />
+            </button>
           </div>
-        </div>
-      )}
+        </Card>
+
+        {/* Menu contextuel */}
+        {isMenuOpen && (
+          <div
+            ref={menuRef}
+            className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-background border border-border z-50"
+          >
+            <div className="py-1">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </AnimatedCard>
     </header>
   );
 }
