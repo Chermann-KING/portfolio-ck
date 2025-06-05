@@ -20,7 +20,7 @@ export function Hero() {
         >
           <Link href="/contact">
             <span className="flex items-center gap-2">
-              Embauchez-moi <Hand className="w-5 h-5" />
+              Discutons-en <Hand className="w-5 h-5" />
             </span>
           </Link>
         </Button>

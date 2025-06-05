@@ -132,7 +132,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: process.env.CONTACT_EMAIL,
-      subject: `Nouveau message de contact de ${sanitizedData.name}`,
+      subject: `Nouveau message de ${sanitizedData.name}`,
       text: getNotificationTemplate(sanitizedData),
     });
 
