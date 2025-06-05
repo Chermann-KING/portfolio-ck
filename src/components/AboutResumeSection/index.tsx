@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { classNames } from "@/lib/utils";
-import ResumeContent from "./ResumeContent";
 import { Card } from "../ui/Card";
 
 type Tab = "about" | "resume";
@@ -15,6 +14,16 @@ export const AboutResumeSection = ({
   aboutContent,
 }: AboutResumeSectionProps) => {
   const [activeTab, setActiveTab] = useState<Tab>("about");
+
+  const handleResumeClick = () => {
+    // Déclencher uniquement le téléchargement du PDF
+    const link = document.createElement("a");
+    link.href = "/cv-hermann-moussavou.pdf";
+    link.download = "CV-Hermann-MOUSSAVOU.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <Card>
@@ -30,26 +39,17 @@ export const AboutResumeSection = ({
             À propos de moi
           </button>
           <button
-            onClick={() => setActiveTab("resume")}
-            className={classNames(
-              "text-xl transition-colors hover:text-text",
-              activeTab === "resume"
-                ? "text-text font-semibold"
-                : "text-muted-foreground"
-            )}
+            onClick={handleResumeClick}
+            className="text-xl transition-colors hover:text-primary text-muted-foreground font-medium"
           >
             Curriculum vitae
           </button>
         </div>
 
         <div className="transition-all duration-300">
-          {activeTab === "about" ? (
-            <div className="space-y-4">
-              <p className="text-body leading-relaxed">{aboutContent}</p>
-            </div>
-          ) : (
-            <ResumeContent />
-          )}
+          <div className="space-y-4">
+            <p className="text-body leading-relaxed">{aboutContent}</p>
+          </div>
         </div>
       </div>
     </Card>
