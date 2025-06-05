@@ -35,7 +35,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="relative">
+    <header className="relative z-50">
       <AnimatedCard direction="up" delay={100}>
         <Card className="flex justify-between items-center gap-4 text-xl">
           <h2 className="text-text-secondary dark:text-gray-400">
@@ -58,28 +58,28 @@ export default function Header() {
             </button>
           </div>
         </Card>
-
-        {/* Menu contextuel */}
-        {isMenuOpen && (
-          <div
-            ref={menuRef}
-            className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-background border border-border z-50"
-          >
-            <div className="py-1">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
       </AnimatedCard>
+
+      {/* Menu contextuel - maintenant en dehors de l'AnimatedCard */}
+      {isMenuOpen && (
+        <div
+          ref={menuRef}
+          className="absolute right-0 top-full mt-2 w-48 rounded-md shadow-lg bg-background border border-border z-50"
+        >
+          <div className="py-1">
+            {menuItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
