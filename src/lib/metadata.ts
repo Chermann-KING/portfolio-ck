@@ -7,7 +7,7 @@ export const siteConfig = {
   description:
     "Portfolio de Hermann MOUSSAVOU : Développeur Full Stack spécialisé en React, Next.js, Angular et TypeScript. Expert en intégration web, design UI/UX et communication digitale. Plus de 3 ans d'expérience dans la création d'applications web performantes et de solutions digitales innovantes.",
   url: "https://portfolio-ck.vercel.app",
-  ogImage: "/og-image.jpg",
+  ogImage: "/images/ck-class.png",
   links: {
     twitter: "https://twitter.com/chermann_king",
     github: "https://github.com/Chermann-KING",
@@ -29,7 +29,7 @@ type MetadataOptions = {
 export function constructMetadata({
   title = "Hermann MOUSSAVOU | Développeur Full Stack | Designer UI/UX | Consultant Digital",
   description = "Portfolio de Hermann MOUSSAVOU : Développeur Full Stack passionné par la création d'applications web modernes et performantes. Expert en React, Next.js, Angular, TypeScript, intégration web, design UI/UX et communication digitale. Spécialisé dans les solutions e-commerce, sites institutionnels et applications métier.",
-  image = "/images/og-image.png",
+  image = "/images/ck-class.png",
   noIndex = false,
   canonical,
   type = "website",
