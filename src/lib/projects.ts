@@ -129,7 +129,6 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Chermann-KING/companyviene",
     isHighlighted: true,
   },
-
   {
     slug: "factures",
     title: "Factures",
@@ -288,6 +287,54 @@ const projects: Project[] = [
     liveUrl: "https://dictionary-web-app-brown-nu.vercel.app/",
     githubUrl: "https://github.com/Chermann-KING/dictionary-web-app",
     isHighlighted: false,
+  },
+  {
+    slug: "semen-africa",
+    title: "Semen Africa Consulting",
+    shortDescription:
+      "Site web corporate professionnel pour une entreprise de conseil en intelligence des affaires spécialisée dans l'accompagnement des investissements en Afrique subsaharienne",
+    context:
+      "Ce projet a été développé pour Semen Africa Consulting, une entreprise marocaine basée à Casablanca, spécialisée dans le conseil en intelligence des affaires. L'objectif était de créer une présence web professionnelle qui reflète l'expertise de l'entreprise dans l'accompagnement des investisseurs internationaux en Afrique subsaharienne. Le site devait présenter les multiples domaines d'expertise tout en véhiculant la crédibilité et le professionnalisme nécessaires pour ce secteur d'activité.",
+    challenges:
+      "Les principaux défis techniques incluaient la création d'une architecture d'information claire pour présenter les 7 missions principales de l'entreprise (compliance, due diligence, arbitrage international, etc.), la mise en place d'une interface professionnelle qui inspire confiance aux investisseurs internationaux, et l'optimisation du référencement pour le marché africain. La présentation de l'équipe de consultants seniors et la mise en valeur des publications spécialisées (SISSA, blog) ont également été des aspects cruciaux de l'intégration.",
+    technologies: ["WordPress", "HTML5", "CSS3", "JavaScript", "Elementor"],
+    duration: "45 heures 20 minutes",
+    role: "Intégrateur Web & Consultant en Communication Digitale",
+    team: "Semen Africa Consulting",
+    keyPoints: [
+      "Architecture d'information structurée autour de 7 missions principales",
+      "Interface corporate moderne avec navigation intuitive",
+      "Présentation professionnelle de l'équipe dirigeante et des consultants",
+      "Section dédiée aux publications et actualités (SISSA, blog)",
+      "Domaines d'expertise spécialisés : Compliance, Due Diligence, Arbitrage, I.E & Santé",
+      "Gestion des risques transversaux et intelligence économique",
+      "Responsabilité sociale d'entreprise et mise en relation",
+      "Informations de contact et localisation (Casablanca, Maroc)",
+      "Section téléchargements pour les bulletins et rapports",
+      "Optimisation SEO pour le marché des investissements africains",
+    ],
+    coverImage: "/images/projects/semen-africa/home.png",
+    gallery: [
+      {
+        url: "/images/projects/semen-africa/mission.png",
+        caption: "Présentation d'une des 7 missions et domaines d'expertise",
+      },
+      {
+        url: "/images/projects/semen-africa/team.png",
+        caption: "Équipe de consultants seniors et dirigeants",
+      },
+      {
+        url: "/images/projects/semen-africa/blog.png",
+        caption: "Section publications articles de blog",
+      },
+      {
+        url: "/images/projects/semen-africa/contact.png",
+        caption: "Page de contact avec localisation Casablanca",
+      },
+    ],
+    liveUrl: "https://semen-africa.com/",
+    githubUrl: undefined,
+    isHighlighted: true,
   },
 ];
 
