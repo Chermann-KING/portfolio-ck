@@ -26,13 +26,13 @@ export const AboutResumeSection = ({
   };
 
   return (
-    <Card>
-      <div className="space-y-6">
-        <div className="flex justify-between items-center">
+    <Card className="p-4 sm:p-6">
+      <div className="space-y-4 sm:space-y-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
           <button
             onClick={() => setActiveTab("about")}
             className={classNames(
-              "text-xl font-semibold transition-colors",
+              "text-lg sm:text-xl font-semibold transition-colors",
               activeTab === "about" ? "text-text" : "text-muted-foreground"
             )}
           >
@@ -40,15 +40,18 @@ export const AboutResumeSection = ({
           </button>
           <button
             onClick={handleResumeClick}
-            className="text-xl transition-colors hover:text-primary text-muted-foreground font-medium"
+            className="text-base sm:text-xl transition-colors hover:text-primary text-muted-foreground font-medium"
           >
-            Curriculum vitae
+            <span className="hidden sm:inline">Curriculum vitae</span>
+            <span className="sm:hidden">CV</span>
           </button>
         </div>
 
         <div className="transition-all duration-300">
-          <div className="space-y-4">
-            <p className="text-body leading-relaxed">{aboutContent}</p>
+          <div className="space-y-3 sm:space-y-4">
+            <p className="text-sm sm:text-base leading-relaxed">
+              {aboutContent}
+            </p>
           </div>
         </div>
       </div>

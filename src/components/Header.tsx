@@ -37,41 +37,42 @@ export default function Header() {
   return (
     <header className="relative z-50">
       <AnimatedCard direction="up" delay={100}>
-        <Card className="flex justify-between items-center gap-4 text-xl">
-          <h2 className="text-text-secondary dark:text-gray-400">
-            Développeur
+        <Card className="flex justify-between items-center gap-2 sm:gap-4 p-4 sm:p-6">
+          <h2 className="text-sm sm:text-lg lg:text-xl text-text-secondary dark:text-gray-400">
+            <span className="hidden sm:inline">Développeur</span>
+            <span className="sm:hidden">Dev</span>
             <span className="text-text-primary dark:text-white font-semibold">
               {" "}
               FullStack
             </span>
           </h2>
-          <div className="flex gap-4">
+          <div className="flex gap-2 sm:gap-4 items-center">
             <ThemeToggle />
             <button
               ref={buttonRef}
-              className="font-semibold relative"
+              className="font-semibold relative p-2 sm:p-0"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-expanded={isMenuOpen}
               aria-label="Menu principal"
             >
-              <AlignJustify />
+              <AlignJustify className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
         </Card>
       </AnimatedCard>
 
-      {/* Menu contextuel - maintenant en dehors de l'AnimatedCard */}
+      {/* Menu contextuel */}
       {isMenuOpen && (
         <div
           ref={menuRef}
-          className="absolute right-0 top-full mt-2 w-48 rounded-md shadow-lg bg-background border border-border z-50"
+          className="absolute right-0 top-full mt-2 w-40 sm:w-48 rounded-md shadow-lg bg-background border border-border z-50"
         >
           <div className="py-1">
             {menuItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
+                className="block px-3 sm:px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

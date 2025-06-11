@@ -11,13 +11,13 @@ interface StatsSectionProps {
 
 export function StatsSection({ stats }: StatsSectionProps) {
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
       <AnimatedCard direction="right" delay={300}>
         <StatCard
           count={stats.yearsExperience}
           label="Années d'expérience"
           bgColor="bg-emerald-500 dark:bg-emerald-500"
-          // className="aspect-square"
+          className="min-h-[80px] sm:min-h-[100px] lg:min-h-[120px]"
         />
       </AnimatedCard>
       <AnimatedCard direction="right" delay={250}>
@@ -26,7 +26,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
           label="Projets réalisés"
           bgColor="bg-amber-400 dark:bg-amber-400"
           textColor="text-gray-900 dark:text-gray-900"
-          // className="aspect-square"
+          className="min-h-[80px] sm:min-h-[100px] lg:min-h-[120px]"
         />
       </AnimatedCard>
       <AnimatedCard direction="right" delay={200}>
@@ -34,7 +34,7 @@ export function StatsSection({ stats }: StatsSectionProps) {
           count={stats.clientsCount}
           label="Clients"
           bgColor="bg-rose-400 dark:bg-rose-400"
-          // className="aspect-square"
+          className="min-h-[80px] sm:min-h-[100px] lg:min-h-[120px]"
         />
       </AnimatedCard>
     </div>

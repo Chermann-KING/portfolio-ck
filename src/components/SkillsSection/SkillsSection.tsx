@@ -1,7 +1,6 @@
 "use client";
 
 import { Badge } from "@/components/ui/Badge";
-// import { Card } from "@/components/ui/Card";
 
 type SkillsSectionProps = {
   skills?: Record<string, string[]>;
@@ -29,7 +28,6 @@ const categoryStyles = {
 };
 
 export function SkillsSection({ skills = {} }: SkillsSectionProps) {
-  // Si skills est undefined ou null, utiliser un objet vide
   const skillsData = skills || {};
   const categories = Object.keys(skillsData);
 
@@ -40,11 +38,11 @@ export function SkillsSection({ skills = {} }: SkillsSectionProps) {
 
   return (
     <div className="w-full h-full">
-      <div className="flex items-center mb-4">
-        <h2 className="text-xl font-semibold">Compétences</h2>
+      <div className="flex items-center mb-3 sm:mb-4">
+        <h2 className="text-lg sm:text-xl font-semibold">Compétences</h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-3">
+      <div className="grid grid-cols-1 gap-2 sm:gap-3">
         {categories.map((category) => {
           const skillsList = skillsData[category] || [];
 
@@ -60,24 +58,24 @@ export function SkillsSection({ skills = {} }: SkillsSectionProps) {
           return (
             <div
               key={category}
-              // className={`p-3 ${style.bg} transition-colors duration-200 ${style.hover}`}
-              className={`p-3 transition-colors rounded-2xl duration-200 ${style.hover}`}
+              className={`p-2 sm:p-3 transition-colors rounded-xl sm:rounded-2xl duration-200 ${style.hover}`}
             >
-              <div className="space-y-2">
+              <div className="space-y-1.5 sm:space-y-2">
                 <div className="flex items-center gap-2">
-                  {/* <span className="text-xl">{style.icon}</span> */}
-                  <h3 className={`text-md font-medium ${style.text}`}>
+                  <h3
+                    className={`text-sm sm:text-base font-medium ${style.text}`}
+                  >
                     {category}
                   </h3>
                 </div>
 
-                <div className="flex flex-wrap gap-1">
+                <div className="flex flex-wrap gap-1 sm:gap-1.5">
                   {Array.isArray(skillsList) &&
                     skillsList.map((skill) => (
                       <Badge
                         key={skill}
                         variant="default"
-                        className={`${style.text} border-current text-xs py-0.5 px-2`}
+                        className={`${style.text} border-current text-xs py-0.5 px-1.5 sm:px-2`}
                       >
                         {skill}
                       </Badge>
