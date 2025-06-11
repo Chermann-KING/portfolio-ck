@@ -42,7 +42,7 @@ async function ProfileData() {
           </div>
         </div>
         {/* Méthodologie de travail */}
-        <div className="p-4 overflow-hidden flex items-center justify-center gap-10">
+        <div className="p-4 overflow-hidden flex items-center justify-center flex-wrap gap-10">
           <Badge
             variant="default"
             className="font-bold tracking-wider py-3 px-5"

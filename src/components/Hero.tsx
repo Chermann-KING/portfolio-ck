@@ -9,7 +9,7 @@ export function Hero() {
     <AnimatedCard direction="up" delay={150}>
       <Card className="relative flex justify-between items-center gap-4 text-xl">
         {/* <div className="relative flex justify-between gap-6"> */}
-        <h1 className="block text-5xl font-bold leading-tight text-text-primary dark:text-white">
+        <h1 className="block text-xl lg:text-5xl font-bold leading-tight text-text-primary dark:text-white">
           <span>Transformez vos idées en expériences digitales</span>{" "}
           <span className="block"> percutantes.</span>
         </h1>

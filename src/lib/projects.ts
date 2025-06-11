@@ -75,39 +75,61 @@ const projects: Project[] = [
     isHighlighted: true,
   },
   {
-    slug: "dictionaire",
-    title: "Dictionaire",
+    slug: "companyviene",
+    title: "CompanyViene",
     shortDescription:
-      "Dictionnaire d'anglais en ligne avec une interface moderne et intuitive",
+      "Site vitrine corporate multilingue moderne pour une entreprise d'ingénierie et de digitalisation avec interface responsive et fonctionnalités avancées",
     context:
-      "Ce projet est né de la nécessité de créer un dictionnaire d'anglais accessible et facile à utiliser. L'objectif était de fournir une interface moderne qui permet aux utilisateurs de rechercher rapidement des définitions et d'accéder à des exemples pertinents.",
+      "Ce projet est né du besoin de créer une présence web professionnelle pour CompanyViene, une entreprise spécialisée dans l'ingénierie et la digitalisation. L'objectif était de développer un site vitrine moderne, multilingue (français/anglais) qui reflète le professionnalisme de l'entreprise tout en offrant une expérience utilisateur exceptionnelle. Le site devait présenter les services, permettre la prise de contact et s'adapter parfaitement aux standards internationaux.",
     challenges:
-      "L'un des principaux défis était de créer une expérience utilisateur fluide tout en gérant une large base de données de mots et de définitions. La mise en place d'une recherche instantanée performante et la gestion du cache côté client ont été des aspects cruciaux du développement.",
-    technologies: ["React", "TypeScript", "MongoDB", "Tailwind CSS", "Next.js"],
-    duration: "56 heures 40 minutes",
-    role: "Développeur Frontend & Designer UI/UX",
-    team: "Frontend Mentor",
-    keyPoints: [
-      "Interface utilisateur intuitive et responsive",
-      "Recherche instantanée avec suggestions",
-      "Mode sombre/clair",
-      "Plus de 100,000 mots dans la base de données",
+      "Les principaux défis techniques incluaient la mise en place d'un système d'internationalisation robuste avec Next.js 15, la gestion du routing dynamique multilingue avec des URLs SEO-friendly, l'intégration des APIs externes (Google Maps, système de mail), et la résolution des problèmes de compatibilité avec la dernière version de Next.js. La configuration du déploiement sur Vercel avec gestion des variables d'environnement et l'optimisation des performances ont également été des aspects cruciaux.",
+    technologies: [
+      "Next.js 15",
+      "React 19",
+      "TypeScript 5",
+      "Tailwind CSS 3",
+      "next-intl",
+      "Google Maps API",
+      "Upstash Redis",
+      "Nodemailer 6",
+      "Zod",
+      "Vercel",
     ],
-    coverImage: "/images/projects/keyboard/eng-dico-api-light.png",
+    duration: "41 heures 14 minutes",
+    role: "Développeur Full Stack & Consultant UI/UX",
+    team: "CompanyViene",
+    keyPoints: [
+      "Architecture Next.js 15 avec App Router et routing internationalisé",
+      "Support complet multilingue (FR/EN) avec next-intl",
+      "Système de navigation dynamique avec URLs localisées",
+      "Interface responsive moderne avec animations et transitions",
+      "Intégration Google Maps pour la localisation",
+      "Formulaire de contact avec validation Zod et envoi d'emails",
+      "Optimisations UI/UX avancées (spacing, typography, gradients)",
+      "Déploiement automatisé sur Vercel avec CI/CD",
+      "Gestion des erreurs et fallbacks robustes",
+      "Architecture modulaire avec composants réutilisables",
+    ],
+    coverImage: "/images/projects/companyviene/home.png",
     gallery: [
       {
-        url: "/images/projects/keyboard/search.jpg",
-        caption: "Interface de recherche",
+        url: "/images/projects/companyviene/products-services.png",
+        caption: "Grille des domaines d'activités avec design moderne",
       },
       {
-        url: "/images/projects/keyboard/details.jpg",
-        caption: "Page de détails d'un mot",
+        url: "/images/projects/companyviene/contact-form.png",
+        caption: "Formulaire de contact avec validation et envoi d'emails",
+      },
+      {
+        url: "/images/projects/companyviene/footer.png",
+        caption: "Footer responsive avec liens organisés",
       },
     ],
-    liveUrl: "https://dictionary-web-app-brown-nu.vercel.app/",
-    githubUrl: "https://github.com/Chermann-KING/dictionary-web-app",
-    isHighlighted: false,
+    liveUrl: "https://companyviene.vercel.app",
+    githubUrl: "https://github.com/Chermann-KING/companyviene",
+    isHighlighted: true,
   },
+
   {
     slug: "factures",
     title: "Factures",
@@ -117,7 +139,7 @@ const projects: Project[] = [
       "Ce projet est une application de gestion de factures développée pour permettre aux utilisateurs de suivre et gérer efficacement leurs factures. L'application offre une interface intuitive pour visualiser, filtrer et gérer différents états de facturation.",
     challenges:
       "Les principaux défis techniques incluaient la mise en place d'un système de filtrage performant, la gestion des différents états de facture (brouillon, en attente, payée), et la création d'une interface utilisateur responsive qui s'adapte à différentes tailles d'écran. La normalisation des données et la gestion d'état ont également été des aspects importants du développement.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "JSON"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "JSON"],
     duration: "76 heures 16 minutes",
     role: "Développeur Full Stack",
     team: "Frontend Mentor",
@@ -231,6 +253,40 @@ const projects: Project[] = [
     ],
     liveUrl: "https://ck-garage-manager.vercel.app",
     githubUrl: "https://github.com/Chermann-KING/ck-garage-manager",
+    isHighlighted: false,
+  },
+  {
+    slug: "dictionaire",
+    title: "Dictionaire",
+    shortDescription:
+      "Dictionnaire d'anglais en ligne avec une interface moderne et intuitive",
+    context:
+      "Ce projet est né de la nécessité de créer un dictionnaire d'anglais accessible et facile à utiliser. L'objectif était de fournir une interface moderne qui permet aux utilisateurs de rechercher rapidement des définitions et d'accéder à des exemples pertinents.",
+    challenges:
+      "L'un des principaux défis était de créer une expérience utilisateur fluide tout en gérant une large base de données de mots et de définitions. La mise en place d'une recherche instantanée performante et la gestion du cache côté client ont été des aspects cruciaux du développement.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
+    duration: "56 heures 40 minutes",
+    role: "Développeur Frontend & Designer UI/UX",
+    team: "Frontend Mentor",
+    keyPoints: [
+      "Interface utilisateur intuitive et responsive",
+      "Recherche instantanée avec suggestions",
+      "Mode sombre/clair",
+      "Plus de 100,000 mots dans la base de données",
+    ],
+    coverImage: "/images/projects/keyboard/eng-dico-api-light.png",
+    gallery: [
+      {
+        url: "/images/projects/keyboard/search.jpg",
+        caption: "Interface de recherche",
+      },
+      {
+        url: "/images/projects/keyboard/details.jpg",
+        caption: "Page de détails d'un mot",
+      },
+    ],
+    liveUrl: "https://dictionary-web-app-brown-nu.vercel.app/",
+    githubUrl: "https://github.com/Chermann-KING/dictionary-web-app",
     isHighlighted: false,
   },
 ];

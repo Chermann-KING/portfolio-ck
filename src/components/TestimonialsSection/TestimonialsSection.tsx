@@ -9,7 +9,7 @@ interface Testimonial {
   name: string;
   role: string;
   company: string;
-  content: string;
+  content: string[];
   rating: number;
   image?: string;
 }
@@ -151,9 +151,13 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
                       />
                     ))}
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 italic">
-                    &ldquo;{testimonial.content}&rdquo;
-                  </p>
+                  <blockquote className="text-gray-700 dark:text-gray-300 italic mb-2">
+                    {testimonial.content.map((paragraph, idx) => (
+                      <p key={idx} className="mb-2">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </blockquote>
                 </div>
               </div>
             ))}

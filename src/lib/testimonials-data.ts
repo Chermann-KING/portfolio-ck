@@ -3,7 +3,7 @@ export interface TestimonialsData {
     name: string;
     role: string;
     company: string;
-    content: string;
+    content: string[];
     rating: number;
     image?: string;
   }[];
@@ -12,35 +12,43 @@ export interface TestimonialsData {
 export const TestimonialsData: TestimonialsData = {
   testimonials: [
     {
-      name: "Louis-Marie Bourgeois",
-      role: "Directeur des Systèmes d'Information",
-      company: "Informatique Avancée",
-      content:
-        "Un développeur très compétent et passionné par son travail. Il a su s'intégrer rapidement à notre équipe et a apporté des idées novatrices.",
+      name: "Landry Ndong Aboghé",
+      role: "Co-founder",
+      company: "CompanyViene",
+      content: [
+        "Hermann est une ressource de qualité exceptionnelle,  connu initialement pour ses talents et compétences de Designer, il a su très rapidement s'appuyer sur ses qualités de perfectionniste pour s'adapter au secteur du développement applicatif à travers l'apprentissage de plusieurs langages de codage.",
+        "Il a su imprimer aupres de nos collaborateurs des standards de qualités très relevées et qui nous permettent de gagner énormément en crédibilité!",
+      ],
       rating: 4,
     },
     {
-      name: "Jean Dupont",
-      role: "Directeur Technique",
-      company: "Tech Solutions",
-      content:
-        "Un développeur exceptionnel qui a apporté une contribution significative à notre équipe. Son expertise technique et sa capacité à résoudre des problèmes complexes sont impressionnantes.",
+      name: "Germain Ndouanis",
+      role: "Founder",
+      company: "NRL SOLUTIONS",
+      content: [
+        "I wholeheartedly recommend Hermann MOUSSAVOU for the role of Full Stack and App Developer. ",
+        "He possesses a deep understanding of both web and mobile app development and is skilled in a variety of technologies.",
+        "Hermann is not just a talented individual; he’s also a fantastic team player who is committed to delivering high-quality work.",
+        "He would undoubtedly be a tremendous asset to your team or any related project.",
+      ],
       rating: 5,
     },
     {
       name: "Marie Martin",
       role: "Product Owner",
       company: "Digital Innovation",
-      content:
+      content: [
         "Une collaboration très professionnelle et efficace. Les livrables étaient toujours de haute qualité et respectaient les délais.",
+      ],
       rating: 5,
     },
     {
       name: "Pierre Dubois",
       role: "Lead Developer",
       company: "Web Agency",
-      content:
+      content: [
         "Une expertise technique remarquable et une excellente capacité d'adaptation. Un vrai atout pour n'importe quelle équipe de développement.",
+      ],
       rating: 4,
     },
   ],
