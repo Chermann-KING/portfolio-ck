@@ -390,6 +390,61 @@ const projects: Project[] = [
     githubUrl: undefined,
     isHighlighted: true,
   },
+  {
+    slug: "adis-belcongo",
+    title: "ADIS - Action pour le Développement Intégré du Sankuru",
+    shortDescription:
+      "Site web institutionnel pour une ASBL humanitaire belgo-congolaise dédiée au développement rural intégré dans la région du Sankuru (RDC) via l'agriculture, la santé et l'éducation",
+    context:
+      "Ce projet a été développé pour l'ASBL ADIS-Belgique, organisation créée en 2016 pour soutenir l'action d'ADIS-Congo (fondée en 1995 par François Okitafumba). L'objectif était de créer une plateforme web complète permettant de présenter cette initiative humanitaire unique qui vise à revitaliser la région du Sankuru en RDC, autrefois prospère mais aujourd'hui confrontée à l'isolement et à la malnutrition. Le site devait faciliter les dons, le recrutement de bénévoles et sensibiliser le public européen aux enjeux du développement rural africain tout en mettant en valeur l'approche intégrée sur trois piliers fondamentaux.",
+    challenges:
+      "Les principaux défis techniques incluaient la création d'une interface qui touche émotionnellement les visiteurs tout en restant professionnelle pour les donateurs institutionnels, l'intégration d'un système de dons sécurisé avec plusieurs options de paiement (compte ADIS et partenariat PROMA), et la présentation claire des projets concrets sur le terrain. La mise en valeur de l'histoire de l'association depuis 1995, la gestion des témoignages et l'optimisation pour un public bilingue (Belgique-Congo) ont également été des aspects cruciaux de l'intégration. Le défi était aussi de rendre tangible l'impact des actions menées dans une région isolée d'Afrique centrale.",
+    technologies: [
+      "WordPress",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Elementor",
+      "Payment Gateway Integration",
+    ],
+    duration: "42 heures 30 minutes",
+    role: "Intégrateur Web & Graphiste",
+    team: "ADIS-Belgique",
+    keyPoints: [
+      "Site institutionnel pour ASBL humanitaire belgo-congolaise",
+      "Architecture basée sur 3 piliers : Agriculture, Santé, Éducation",
+      "Système de dons intégré avec options multiples (ADIS + PROMA)",
+      "Déductibilité fiscale automatisée pour dons >40€",
+      "Section bénévolat avec formulaires de candidature",
+      "Présentation historique depuis 1995 (François Okitafumba)",
+      "Focus sur la région du Sankuru (ex-grenier du Congo)",
+      "Contacts bi-nationaux (Belgique: Vincent Boland, Congo: François Okitafumba)",
+      "Interface émotionnelle avec call-to-action humanitaires",
+      "Proverbe africain intégré : 'Un doigt tout seul ne peut pas ramasser un caillou'",
+      "Projet ferme pilote de Lowela mis en valeur",
+      "Optimisation SEO pour 'développement rural Congo'",
+    ],
+    coverImage: "/images/projects/adis-belcongo/home.png",
+    gallery: [
+      {
+        url: "/images/projects/adis-belcongo/about.png",
+        caption:
+          "Les 3 piliers du développement : Agriculture, Santé, Éducation",
+      },
+      {
+        url: "/images/projects/adis-belcongo/donation.png",
+        caption:
+          "Système de dons avec options multiples et déductibilité fiscale",
+      },
+      {
+        url: "/images/projects/adis-belcongo/volunteer.png",
+        caption: "Section bénévolat et engagement communautaire",
+      },
+    ],
+    liveUrl: "https://adis-belcongo.org/",
+    githubUrl: undefined,
+    isHighlighted: false,
+  },
 ];
 
 export async function getProjectBySlug(slug: string): Promise<Project | null> {
