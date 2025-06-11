@@ -336,6 +336,60 @@ const projects: Project[] = [
     githubUrl: undefined,
     isHighlighted: true,
   },
+  {
+    slug: "sissa",
+    title:
+      "SISSA - Sommet sur les Investissements dans les Systèmes de Santé en Afrique",
+    shortDescription:
+      "Site événementiel professionnel pour le premier sommet continental dédié aux investissements dans les systèmes de santé en Afrique, organisé à Abidjan en 2025",
+    context:
+      "Ce projet a été développé pour promouvoir et organiser le SISSA 2025, une initiative portée par Semen Africa Consulting visant à transformer les défis sanitaires du continent africain en opportunités économiques substantielles. L'objectif était de créer une plateforme web complète pour présenter cet événement majeur, faciliter les inscriptions des participants, et mettre en valeur l'approche innovante du sommet qui combine enjeux sanitaires et économiques. Le site devait refléter le caractère continental et prestigieux de l'événement tout en attirant investisseurs, professionnels de santé et décideurs africains.",
+    challenges:
+      "Les principaux défis techniques incluaient la création d'une identité visuelle forte pour cet événement inaugural, la mise en place d'une architecture d'information claire pour présenter les 4 piliers du sommet (Éthique, Rentabilité, Durabilité, Partenariat), et l'intégration d'un système de gestion d'événement avec agenda détaillé. La gestion des partenariats multiples, l'optimisation pour un public panafricain, et la création d'une expérience utilisateur engageante pour promouvoir la participation ont également été des aspects cruciaux du développement.",
+    technologies: [
+      "WordPress",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Elementor",
+      "Event Management System",
+    ],
+    duration: "38 heures 15 minutes",
+    role: "Intégrateur Web & Spécialiste Communication Événementielle",
+    team: "Semen Africa Consulting",
+    keyPoints: [
+      "Site événementiel pour le premier sommet continental SISSA 2025",
+      "Architecture basée sur 4 piliers : Éthique, Rentabilité, Durabilité, Partenariat",
+      "Agenda détaillé avec 3 temps forts (3, 11 et 12 février 2025)",
+      "Section partenaires avec intégration de multiples logos d'organisations",
+      "Approche méthodologique : Identifier, Analyser, Transformer",
+      "Focus sur la transformation des défis sanitaires en opportunités économiques",
+      "Mise en valeur de la Côte d'Ivoire comme hub régional",
+      "Interface moderne adaptée au public professionnel africain",
+      "Historique des événements Semen Africa (2022-2024)",
+      "Section dédiée aux enjeux et thématiques du sommet",
+      "Optimisation SEO pour 'investissements santé Afrique'",
+      "Call-to-action pour devenir partenaire de l'événement",
+    ],
+    coverImage: "/images/projects/sissa/home.png",
+    gallery: [
+      {
+        url: "/images/projects/sissa/about.png",
+        caption: "Présentation des enjeux et objectifs du SISSA",
+      },
+      {
+        url: "/images/projects/sissa/partner.png",
+        caption: "Écosystème de partenaires et organisations participantes",
+      },
+      {
+        url: "/images/projects/sissa/approach.png",
+        caption: "Méthodologie et approche du sommet",
+      },
+    ],
+    liveUrl: "https://sissa.semen-africa.com/",
+    githubUrl: undefined,
+    isHighlighted: true,
+  },
 ];
 
 export async function getProjectBySlug(slug: string): Promise<Project | null> {
