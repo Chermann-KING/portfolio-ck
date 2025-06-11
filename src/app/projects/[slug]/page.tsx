@@ -10,7 +10,6 @@ import type { Metadata } from "next";
 
 export const dynamicParams = true;
 
-// Définition correcte des props pour Next.js 15.3.1
 type PageParams = {
   slug: string;
 };
@@ -76,21 +75,23 @@ export default async function ProjectPage({
   }
 
   return (
-    <main className="container mx-auto py-12 px-4">
+    <main className="container mx-auto py-6 sm:py-8 lg:py-12 px-3 sm:px-4">
       <BackButton href="/projects" label="Retour aux projets" />
 
       {/* En-tête du projet */}
-      <div className="space-y-6 mb-12">
-        <div className="flex justify-between items-start gap-8">
-          <div>
-            <h1 className="text-4xl font-bold">{project.title}</h1>
-            <p className="text-xl text-muted-foreground mt-2">
+      <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-4 lg:gap-8">
+          <div className="flex-1">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+              {project.title}
+            </h1>
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mt-2">
               {project.shortDescription}
             </p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
             {project.liveUrl && (
-              <Button className="w-[142px] min-w-[142px]" asChild>
+              <Button className="w-full sm:w-[142px] sm:min-w-[142px]" asChild>
                 <a
                   href={project.liveUrl}
                   target="_blank"
@@ -103,7 +104,7 @@ export default async function ProjectPage({
             {project.githubUrl && (
               <Button
                 variant="outline"
-                className="w-[142px] min-w-[142px]"
+                className="w-full sm:w-[142px] sm:min-w-[142px]"
                 asChild
               >
                 <a
@@ -118,9 +119,9 @@ export default async function ProjectPage({
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {project.technologies.map((tech) => (
-            <Badge key={tech} variant="default">
+            <Badge key={tech} variant="default" className="text-xs sm:text-sm">
               {tech}
             </Badge>
           ))}
@@ -128,9 +129,9 @@ export default async function ProjectPage({
       </div>
 
       {/* Aperçu du projet */}
-      <Card className="mb-12 overflow-hidden">
+      <Card className="mb-8 sm:mb-12 overflow-hidden p-0">
         {project.coverImage && (
-          <div className="relative h-[500px] w-full">
+          <div className="relative h-[250px] sm:h-[400px] lg:h-[500px] w-full">
             <Image
               src={project.coverImage}
               alt={project.title}
@@ -144,20 +145,24 @@ export default async function ProjectPage({
       </Card>
 
       {/* Contenu principal */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2 space-y-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
+        <div className="lg:col-span-2 space-y-8 sm:space-y-12">
           {/* Contexte du projet */}
           <section>
-            <h2 className="text-2xl font-semibold mb-4">Contexte du projet</h2>
-            <div className="prose dark:prose-invert max-w-none">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+              Contexte du projet
+            </h2>
+            <div className="prose prose-sm sm:prose dark:prose-invert max-w-none">
               {project.context}
             </div>
           </section>
 
           {/* Défis techniques */}
           <section>
-            <h2 className="text-2xl font-semibold mb-4">Défis techniques</h2>
-            <div className="prose dark:prose-invert max-w-none">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+              Défis techniques
+            </h2>
+            <div className="prose prose-sm sm:prose dark:prose-invert max-w-none">
               {project.challenges}
             </div>
           </section>
@@ -165,15 +170,17 @@ export default async function ProjectPage({
           {/* Galerie */}
           {project.gallery && project.gallery.length > 0 && (
             <section>
-              <h2 className="text-2xl font-semibold mb-4">Galerie</h2>
-              <div className="grid grid-cols-2 gap-4">
+              <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+                Galerie
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {project.gallery.map((image, index) => (
                   <div key={index} className="relative aspect-video">
                     <Image
                       src={image.url}
                       alt={image.caption || ""}
                       fill
-                      sizes="(max-width: 768px) 50vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                       className="object-cover rounded-lg"
                     />
                   </div>
@@ -184,36 +191,40 @@ export default async function ProjectPage({
         </div>
 
         {/* Sidebar */}
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {/* Informations clés */}
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Informations clés</h3>
-            <dl className="space-y-4">
+          <Card className="p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">
+              Informations clés
+            </h3>
+            <dl className="space-y-3 sm:space-y-4">
               <div>
                 <dt className="text-sm text-muted-foreground">
                   Durée du projet (WakaTime)
                 </dt>
-                <dd className="text-base">{project.duration}</dd>
+                <dd className="text-sm sm:text-base">{project.duration}</dd>
               </div>
               <div>
                 <dt className="text-sm text-muted-foreground">Rôle</dt>
-                <dd className="text-base">{project.role}</dd>
+                <dd className="text-sm sm:text-base">{project.role}</dd>
               </div>
               <div>
                 <dt className="text-sm text-muted-foreground">Client</dt>
-                <dd className="text-base">{project.team}</dd>
+                <dd className="text-sm sm:text-base">{project.team}</dd>
               </div>
             </dl>
           </Card>
 
           {/* Points clés */}
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Points clés</h3>
+          <Card className="p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">
+              Points clés
+            </h3>
             <ul className="space-y-2">
               {project.keyPoints.map((point, index) => (
                 <li key={index} className="flex gap-2">
                   <span className="text-primary">•</span>
-                  <span>{point}</span>
+                  <span className="text-sm sm:text-base">{point}</span>
                 </li>
               ))}
             </ul>
