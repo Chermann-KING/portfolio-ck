@@ -12,9 +12,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Hermann Moussavou Portfolio",
+  title:
+    "Hermann MOUSSAVOU - Développeur Full Stack | Designer UI/UX | Consultant Digital",
   description:
-    "Portfolio de concepteurs d'interface utilisateur présentant des conceptions créatives et innovantes ainsi que des projets de développement web et mobile.",
+    "Portfolio de Hermann MOUSSAVOU : Développeur Full Stack spécialisé en React, Next.js, Angular et TypeScript. Expert en intégration web, design UI/UX et communication digitale. Découvrez mes réalisations en développement web, applications mobiles et solutions digitales innovantes.",
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/hermann-moussavou-icon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/hermann-moussavou-icon-32x32.png",
+    apple: "/hermann-moussavou-icon-32x32.png",
+  },
 };
 
 export default function RootLayout({

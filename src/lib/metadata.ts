@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 
 export const siteConfig = {
   name: "Hermann MOUSSAVOU",
-  title: "Hermann MOUSSAVOU - Développeur Fullstack",
+  title:
+    "Hermann MOUSSAVOU - Développeur Full Stack | Designer UI/UX | Consultant Digital",
   description:
-    "Portfolio de développeur fullstack spécialisé en React, Next.js, Node.js Angular et TypeScript. Découvrez mes projets et compétences en développement web.",
+    "Portfolio de Hermann MOUSSAVOU : Développeur Full Stack spécialisé en React, Next.js, Angular et TypeScript. Expert en intégration web, design UI/UX et communication digitale. Plus de 3 ans d'expérience dans la création d'applications web performantes et de solutions digitales innovantes.",
   url: "https://portfolio-ck.vercel.app",
   ogImage: "/og-image.jpg",
   links: {
@@ -26,8 +27,8 @@ type MetadataOptions = {
 };
 
 export function constructMetadata({
-  title = "Hermann MOUSSAVOU | Développeur Full Stack",
-  description = "Portfolio de Hermann MOUSSAVOU, développeur Full Stack passionné par la création d'applications web modernes et performantes.",
+  title = "Hermann MOUSSAVOU | Développeur Full Stack | Designer UI/UX | Consultant Digital",
+  description = "Portfolio de Hermann MOUSSAVOU : Développeur Full Stack passionné par la création d'applications web modernes et performantes. Expert en React, Next.js, Angular, TypeScript, intégration web, design UI/UX et communication digitale. Spécialisé dans les solutions e-commerce, sites institutionnels et applications métier.",
   image = "/images/og-image.png",
   noIndex = false,
   canonical,
@@ -41,6 +42,21 @@ export function constructMetadata({
   const metadata: Metadata = {
     title,
     description,
+    icons: {
+      icon: [
+        {
+          url: "/favicon.ico",
+          sizes: "any",
+        },
+        {
+          url: "/hermann-moussavou-icon-32x32.png",
+          sizes: "32x32",
+          type: "image/png",
+        },
+      ],
+      shortcut: "/hermann-moussavou-icon-32x32.png",
+      apple: "/hermann-moussavou-icon-32x32.png",
+    },
     openGraph: {
       title,
       description,
@@ -58,7 +74,7 @@ export function constructMetadata({
       title,
       description,
       images: [image.startsWith("http") ? image : `${baseUrl}${image}`],
-      creator: "@HermannMOUSSAVOU",
+      creator: "@chermann_king",
     },
     robots: {
       index: !noIndex,
