@@ -8,6 +8,8 @@ export const siteConfig = {
     "Portfolio de Hermann MOUSSAVOU : Développeur Full Stack spécialisé en React, Next.js, Angular et TypeScript. Expert en intégration web, design UI/UX et communication digitale. Plus de 3 ans d'expérience dans la création d'applications web performantes et de solutions digitales innovantes.",
   url: "https://portfolio-ck.vercel.app",
   ogImage: "/images/ck-class.png",
+  favicon: "/assets/icons/favicon.ico",
+  favicon32: "/assets/icons/favicon-32x32.png",
   links: {
     twitter: "https://twitter.com/chermann_king",
     github: "https://github.com/Chermann-KING",
@@ -19,6 +21,8 @@ type MetadataOptions = {
   title?: string;
   description?: string;
   image?: string;
+  favicon?: string;
+  favicon32?: string;
   noIndex?: boolean;
   canonical?: string;
   type?: "website" | "article";
@@ -30,6 +34,8 @@ export function constructMetadata({
   title = "Hermann MOUSSAVOU | Développeur Full Stack | Designer UI/UX | Consultant Digital",
   description = "Portfolio de Hermann MOUSSAVOU : Développeur Full Stack passionné par la création d'applications web modernes et performantes. Expert en React, Next.js, Angular, TypeScript, intégration web, design UI/UX et communication digitale. Spécialisé dans les solutions e-commerce, sites institutionnels et applications métier.",
   image = "/images/ck-class.png",
+  favicon = "/assets/icons/favicon.ico",
+  favicon32 = "/assets/icons/favicon-32x32.png",
   noIndex = false,
   canonical,
   type = "website",
@@ -45,17 +51,17 @@ export function constructMetadata({
     icons: {
       icon: [
         {
-          url: "/favicon.ico",
+          url: favicon,
           sizes: "any",
         },
         {
-          url: "/hermann-moussavou-icon-32x32.png",
+          url: favicon32,
           sizes: "32x32",
           type: "image/png",
         },
       ],
-      shortcut: "/hermann-moussavou-icon-32x32.png",
-      apple: "/hermann-moussavou-icon-32x32.png",
+      shortcut: favicon32,
+      apple: favicon32,
     },
     openGraph: {
       title,

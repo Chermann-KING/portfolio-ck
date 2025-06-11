@@ -16,6 +16,19 @@ export const metadata: Metadata = {
     "Hermann MOUSSAVOU - Développeur Full Stack | Designer UI/UX | Consultant Digital",
   description:
     "Portfolio de Hermann MOUSSAVOU : Développeur Full Stack spécialisé en React, Next.js, Angular et TypeScript. Expert en intégration web, design UI/UX et communication digitale. Découvrez mes réalisations en développement web, applications mobiles et solutions digitales innovantes.",
+  icons: {
+    icon: [
+      {
+        url: "/assets/icons/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/assets/icons/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
