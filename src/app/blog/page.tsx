@@ -38,7 +38,7 @@ export default function BlogPage() {
       <BackButton href="/" label="Retour à l'accueil" />
       {/* Header */}
       <AnimatedCard direction="up" delay={100}>
-        <div className="text-center space-y-4 sm:space-y-6 -mt-14">
+        <div className="text-left  sm:text-center space-y-4 sm:space-y-6 -mt-10 sm:-mt-14">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Blog</h1>
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
             Mes réflexions et expériences sur le développement web, les
@@ -49,7 +49,7 @@ export default function BlogPage() {
 
       {/* Filtres par catégorie */}
       <AnimatedCard direction="up" delay={200}>
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+        <div className="flex flex-wrap justify-start sm:justify-center gap-2 sm:gap-3">
           <Badge
             variant={activeFilter === "all" ? "default" : "other"}
             className="cursor-pointer hover:bg-muted transition-colors"

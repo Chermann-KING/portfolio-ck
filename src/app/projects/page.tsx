@@ -6,11 +6,11 @@ export default async function ProjectsPage() {
   const projects = await getAllProjects();
 
   return (
-    <main className="container mx-auto py-6 sm:py-8 lg:py-12 px-3 sm:px-4">
+    <main className="container mx-auto py-6 sm:py-8 lg:py-12 px-3 sm:px-4 space-y-8 sm:space-y-12">
       <BackButton href="/" label="Retour à l'accueil" />
 
       <div className="space-y-6 sm:space-y-8">
-        <div>
+        <div className="text-left  sm:text-center space-y-4 sm:space-y-6 -mt-10 sm:-mt-14">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
             Mes Projets
           </h1>
