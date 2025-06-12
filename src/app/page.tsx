@@ -3,8 +3,10 @@ import { StatsSection } from "@/components/StatsSection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { ProfileSection } from "@/components/ProfileSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
+import { BlogSection } from "@/components/BlogSection";
 import Header from "@/components/Header";
 import { getProfileData } from "@/lib/profile-data";
+import { getHighlightedBlogPosts } from "@/lib/blog-data";
 import { AboutResumeSection } from "@/components/AboutResumeSection";
 import { constructMetadata } from "@/lib/metadata";
 import { Card } from "@/components/ui/Card";
@@ -76,7 +78,9 @@ async function ProfileData() {
   }
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const blogPosts = await getHighlightedBlogPosts();
+
   return (
     <>
       <Header />
@@ -85,6 +89,7 @@ export default function HomePage() {
         <ProfileData />
         <PortfolioSection />
         <TestimonialsSection testimonials={TestimonialsData.testimonials} />
+        <BlogSection posts={blogPosts} />
       </main>
       <Footer />
     </>

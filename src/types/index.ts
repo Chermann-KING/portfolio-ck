@@ -40,3 +40,20 @@ export interface PortfolioItemProps {
   imageUrl: string;
   category: string;
 }
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string[];
+  category: "Développement" | "Design" | "Tutoriels" | "Veille Tech";
+  publishedAt: string;
+  readingTime: string;
+  coverImage: string;
+  tags: string[];
+  author: {
+    name: string;
+    avatar: string;
+  };
+  isHighlighted: boolean;
+}
