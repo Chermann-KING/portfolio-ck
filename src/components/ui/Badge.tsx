@@ -4,12 +4,14 @@ interface BadgeProps {
   children: React.ReactNode;
   variant?: "frontend" | "backend" | "other" | "default";
   className?: string;
+  onClick?: () => void;
 }
 
 export function Badge({
   children,
   variant = "default",
   className,
+  onClick,
 }: BadgeProps) {
   return (
     <span
@@ -28,6 +30,7 @@ export function Badge({
           "bg-gray-50/10 text-gray-500 dark:text-gray-400 border-gray-200/20",
         className
       )}
+      onClick={onClick}
     >
       {children}
     </span>
