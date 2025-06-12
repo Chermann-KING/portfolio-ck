@@ -233,10 +233,11 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 ### 🙏 Remerciements
 
-- **Next.js** pour le framework exceptionnel
-- **Vercel** pour l'hébergement et les outils
-- **Tailwind CSS** pour le système de design
-- **Lucide** pour les icônes de qualité
+- **[Next.js](https://nextjs.org/)** pour le framework exceptionnel
+- **[Vercel](https://vercel.com/)** pour l'hébergement et les outils
+- **[Tailwind CSS](https://tailwindcss.com/)** pour le système de design
+- **[Lucide](https://lucide.dev/)** pour les icônes de qualité
+- **[Kretya Studio](https://dribbble.com/kretyastudio)** pour l'inspiration UI
 
 ---
 
