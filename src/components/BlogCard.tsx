@@ -23,15 +23,15 @@ export const BlogCard: FC<BlogCardProps> = ({ post }) => {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case "Développement":
-        return "bg-blue-500 dark:bg-blue-500";
+        return "bg-blue-500 dark:bg-blue-500 text-white dark:text-white";
       case "Design":
-        return "bg-purple-500 dark:bg-purple-500";
+        return "bg-purple-500 dark:bg-purple-500 text-white dark:text-white";
       case "Tutoriels":
-        return "bg-green-500 dark:bg-green-500";
+        return "bg-green-500 dark:bg-green-500 text-white dark:text-white";
       case "Veille Tech":
-        return "bg-orange-500 dark:bg-orange-500";
+        return "bg-orange-500 dark:bg-orange-500 text-white dark:text-white";
       default:
-        return "bg-gray-500 dark:bg-gray-500";
+        return "bg-gray-500 dark:bg-gray-500 text-white dark:text-white";
     }
   };
 
@@ -50,9 +50,7 @@ export const BlogCard: FC<BlogCardProps> = ({ post }) => {
           />
           <div className="absolute top-3 left-3">
             <Badge
-              className={`${getCategoryColor(
-                post.category
-              )} text-white font-semibold`}
+              className={`${getCategoryColor(post.category)} font-semibold`}
             >
               {post.category}
             </Badge>
