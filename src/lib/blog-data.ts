@@ -2,127 +2,398 @@ import { BlogPost } from "@/types";
 
 const blogPosts: BlogPost[] = [
   {
-    slug: "react-19-nouveautes-revolutionnaires",
-    title: "React 19 : Les nouveautés révolutionnaires qui changent la donne",
+    slug: "bun-runtime-javascript-revolution-2025",
+    title:
+      "Bun 2025 : Le runtime JavaScript qui détrône Node.js avec 7x plus de vitesse",
     excerpt:
-      "Découvrez les fonctionnalités game-changer de React 19 : Actions, nouveaux hooks, Server Components stables et React Compiler. Une révolution pour l'expérience développeur.",
-    content: `React 19 vient de sortir le **5 décembre 2024** et marque une étape historique dans l'évolution de cette bibliothèque incontournable. Après plus de deux ans depuis React 18, cette version majeure apporte des innovations révolutionnaires qui transforment radicalement notre façon de développer des applications web modernes.
+      "Découvrez Bun, le runtime all-in-one qui révolutionne l'écosystème JavaScript : 3-4x plus rapide que Node.js, package manager ultra-rapide, bundler intégré. Installation, benchmarks et guide complet pour adopter Bun en production.",
+    content: `L'écosystème JavaScript vit une **révolution silencieuse mais explosive** en 2025. Avec plus de **5 millions de téléchargements mensuels** et l'adoption par des géants comme Anthropic (Claude Code CLI), **Bun** s'impose comme le runtime JavaScript de nouvelle génération qui change radicalement les règles du jeu.
 
-## Les Actions : LA révolution de React 19
+## Qu'est-ce que Bun ? Le couteau suisse JavaScript
 
-Les **Actions** représentent LA révolution de cette version. Fini le cauchemar de la gestion manuelle des états de formulaires ! React 19 introduit un système d'Actions qui automatise :
+Bun est bien plus qu'un simple runtime JavaScript - c'est un **toolkit all-in-one complet** qui regroupe en un seul exécutable tout ce dont vous avez besoin pour développer des applications JavaScript/TypeScript modernes.
 
-- ✅ La gestion des états \`pending\`
-- ✅ La gestion des erreurs
-- ✅ Les mises à jour optimistes
-- ✅ Les requêtes séquentielles
+### L'écosystème 4-en-1
 
-Plus besoin de jongler avec \`useState\` pour chaque état de soumission - **React s'occupe de tout**.
+| Outil | Fonction | Remplace |
+|-------|----------|----------|
+| **Runtime** | Exécution JS/TS | Node.js, Deno |
+| **Package Manager** | Installation dépendances | npm, yarn, pnpm |
+| **Bundler** | Build & optimisation | Webpack, Vite, esbuild |
+| **Test Runner** | Tests unitaires | Jest, Vitest |
 
-### Exemple pratique
+**Un seul binaire, zéro configuration.** C'est la promesse de Bun : \`bun install\`, \`bun run\`, \`bun test\`, \`bun build\` - tout fonctionne immédiatement.
 
-\`\`\`javascript
-function MyForm() {
-  const [state, formAction] = useActionState(submitAction);
+> **Note technique** : Bun est écrit en **Zig** (pas en C++ ou Rust) et utilise **JavaScriptCore** d'Apple (le moteur de Safari) au lieu de V8 de Chrome.
 
-  return (
-    <form action={formAction}>
-      <input name="email" />
-      <button disabled={state.pending}>
-        {state.pending ? "Envoi..." : "Envoyer"}
-      </button>
-    </form>
-  );
-}
+## Pourquoi Bun change absolument tout ?
+
+### 1. Des performances qui explosent les compteurs 🚀
+
+Les benchmarks 2025 sont sans appel :
+
+**HTTP Server Performance:**
+- 🏆 **Bun** : 52,000+ requêtes/seconde
+- 🥈 Deno : ~22,000 req/s
+- 🥉 Node.js : ~13,000 req/s
+
+**Rendu React côté serveur:**
+- Bun : **68,000 req/s** (x4.8 vs Node.js)
+- Deno : ~29,000 req/s (x2 vs Node.js)
+- Node.js : ~14,000 req/s
+
+### 2. Installation de packages : du jamais vu
+
+\`\`\`bash
+# Projet Next.js avec ~1,100 packages
+
+bun install    # 8.6s  ⚡
+npm install    # 57.4s 🐌
+
+# Bun est 6.7x plus rapide !
 \`\`\`
 
-## Les nouveaux hooks qui changent tout
+**Temps d'installation comparés (2025)** :
 
-Les **nouveaux hooks** changent complètement la donne pour l'UX asynchrone :
+| Package Manager | Projet React (~350 packages) | Projet Next.js (~1.1k packages) |
+|-----------------|------------------------------|----------------------------------|
+| **bun install** | 3.4s | 8.6s |
+| pnpm | 8.2s | 24.1s |
+| yarn | 12.5s | 38.9s |
+| npm | 19.6s | 57.4s |
 
-1. **\`useActionState\`** - Simplifie la gestion des états liés aux Actions
-2. **\`useFormStatus\`** - Permet de suivre l'état d'un formulaire sans prop drilling
-3. **\`useOptimistic\`** - Rend les mises à jour optimistes d'une simplicité déconcertante
-4. **\`use()\`** - Révolutionne la gestion des promesses et du contexte
+> **Le secret** : Bun traite l'installation comme un **problème de programmation système**, pas comme un problème JavaScript. C'est écrit en Zig avec une gestion manuelle de la mémoire.
 
-> **Note importante** : Le hook \`use()\` peut être appelé conditionnellement, contrairement aux autres hooks !
+### 3. Startup ultra-rapide grâce à JavaScriptCore
 
-## Server Components en version stable
-
-Les **Server Components** passent enfin en version stable ! Cette architecture révolutionnaire améliore drastiquement les performances initiales en réduisant le bundle JavaScript côté client.
-
-**Avantages clés :**
-- 📦 Bundle JavaScript réduit de 40-60%
-- ⚡ Chargement initial ultra-rapide
-- 🔄 Intégration native avec Next.js
-- 🎯 Séparation client/serveur optimale
-
-L'intégration native avec les frameworks full-stack comme Next.js ouvre des perspectives inédites pour les applications moderne où le serveur et le client collaborent harmonieusement.
-
-## React Compiler : L'optimisation automatique
-
-**React Compiler** change la philosophie même du développement React. Bien qu'encore en version bêta, cet outil expérimental optimise automatiquement vos applications en gérant la mémoisation sans intervention manuelle.
-
-### Ce que ça change
-
-| Avant | Après |
-|-------|-------|
-| \`useMemo\` partout | ❌ Plus nécessaire |
-| \`useCallback\` manuel | ✅ Automatique |
-| \`memo()\` sur les composants | ✅ Géré par le compilateur |
-
-Adieu \`useMemo\`, \`useCallback\` et \`memo\` - le compilateur détecte et optimise les re-renders de façon intelligente.
-
-## Simplification des refs
-
-L'**amélioration des refs** simplifie considérablement l'API. **\`forwardRef\` devient obsolète !**
-
-Les refs sont maintenant des props normales pour les composants fonctionnels :
+**JavaScriptCore vs V8** :
 
 \`\`\`typescript
-// Avant React 19
-const MyInput = forwardRef((props, ref) => {
-  return <input ref={ref} {...props} />;
-});
+// Temps de démarrage (cold start)
 
-// React 19 - Beaucoup plus simple !
-function MyInput({ ref, ...props }) {
-  return <input ref={ref} {...props} />;
-}
+Bun (JavaScriptCore)    // 0.2s - ⚡ Ultra rapide
+Deno (V8 optimisé)      // 0.5s - Rapide
+Node.js (V8)            // 1.2s - Standard
 \`\`\`
 
-Cette simplification élimine une complexité inutile et rend le code plus naturel et lisible.
+**Pourquoi JavaScriptCore ?**
+- ✅ Démarrage **4x plus rapide** que V8
+- ✅ **Moins de mémoire** consommée (footprint réduit)
+- ✅ Optimisé pour les **cold starts** (serverless parfait)
+- ✅ Moteur prouvé (Safari depuis 2008)
 
-## Meilleurs messages d'erreur
+## Guide complet : Migrer vers Bun en 2025
 
-Les **améliorations de l'hydratation** et des erreurs de développement transforment l'expérience de debugging. Les messages d'erreur sont désormais :
+### Installation en 30 secondes
 
-- 🎯 **Précis** - Vous indiquent exactement où est le problème
-- 🔍 **Actionables** - Suggèrent comment corriger
-- 📍 **Localisés** - Pointent la ligne de code exacte
+**Linux / macOS :**
+\`\`\`bash
+curl -fsSL https://bun.sh/install | bash
+\`\`\`
 
-Fini les messages cryptiques qui vous font perdre des heures !
+**Windows (PowerShell) :**
+\`\`\`powershell
+powershell -c "irm bun.sh/install.ps1 | iex"
+\`\`\`
 
-## Conclusion : L'avenir commence maintenant
+**Alternative avec npm :**
+\`\`\`bash
+npm install -g bun
+\`\`\`
 
-React 19 n'est pas qu'une simple mise à jour - **c'est une transformation** qui positionne React comme l'écosystème de référence pour les applications web de demain.
+**Vérification :**
+\`\`\`bash
+bun --version
+# Bun 1.3+ en 2025
+\`\`\`
 
-Chaque fonctionnalité a été pensée pour :
-- ⚡ Réduire la complexité
-- 🚀 Améliorer les performances
-- 💎 Sublimer l'expérience développeur
+### Créer votre premier projet Bun
 
-**L'avenir du web frontend s'écrit maintenant avec React 19 !** 🎉`,
+\`\`\`bash
+# Initialiser un nouveau projet
+bun init
+
+# Bun va créer automatiquement :
+# - package.json
+# - index.ts (avec support TypeScript natif)
+# - .gitignore
+# - tsconfig.json
+\`\`\`
+
+### Exemple : Serveur HTTP ultra-rapide
+
+\`\`\`typescript
+// server.ts
+const server = Bun.serve({
+  port: 3000,
+  fetch(req) {
+    const url = new URL(req.url);
+
+    if (url.pathname === "/") {
+      return new Response("Hello from Bun! 🚀");
+    }
+
+    if (url.pathname === "/json") {
+      return Response.json({
+        message: "Bun is blazingly fast",
+        timestamp: Date.now()
+      });
+    }
+
+    return new Response("404 Not Found", { status: 404 });
+  },
+});
+
+console.log(\`🚀 Server running at http://localhost:\${server.port}\`);
+\`\`\`
+
+**Lancer le serveur :**
+\`\`\`bash
+bun run server.ts
+# ✅ TypeScript exécuté directement, pas de transpilation !
+\`\`\`
+
+### Migrer un projet Node.js existant
+
+\`\`\`bash
+# 1. Installer les dépendances avec Bun
+bun install
+
+# 2. Remplacer npm run par bun run
+bun run dev
+bun run build
+bun run test
+
+# 3. Vos scripts package.json fonctionnent sans modification !
+\`\`\`
+
+**Compatibilité :** Bun est compatible à **90%+ avec Node.js** et supporte nativement :
+- ✅ Node.js APIs (\`fs\`, \`path\`, \`http\`, etc.)
+- ✅ npm packages (~2 millions de packages compatibles)
+- ✅ \`node_modules\` standard
+- ✅ CommonJS et ES Modules
+
+## Bundler intégré : Adieu Webpack, Vite, esbuild
+
+\`\`\`typescript
+// build.ts
+await Bun.build({
+  entrypoints: ['./src/index.ts'],
+  outdir: './dist',
+  minify: true,
+  splitting: true, // Code splitting automatique
+  target: 'browser',
+  format: 'esm',
+});
+\`\`\`
+
+**Avantages du bundler Bun :**
+- 🔥 **50-70% plus rapide** que Webpack
+- 📦 Minification intégrée
+- 🎯 Tree-shaking automatique
+- ⚡ Hot Module Replacement (HMR)
+- 🚀 Zero config par défaut
+
+## Test Runner : Jest sans la lenteur
+
+\`\`\`typescript
+// math.test.ts
+import { expect, test, describe } from "bun:test";
+
+describe("Math operations", () => {
+  test("addition", () => {
+    expect(2 + 2).toBe(4);
+  });
+
+  test("async operation", async () => {
+    const result = await fetch("https://api.github.com");
+    expect(result.ok).toBe(true);
+  });
+});
+\`\`\`
+
+\`\`\`bash
+bun test
+# ✅ Tests ~3x plus rapides que Jest
+# ✅ Pas besoin de babel/ts-jest
+# ✅ TypeScript natif
+\`\`\`
+
+## Cas d'usage en production (2025)
+
+### ✅ Quand utiliser Bun
+
+| Use Case | Pourquoi Bun excelle |
+|----------|----------------------|
+| **Serverless / Edge** | Cold starts ultra-rapides |
+| **APIs haute performance** | 3-4x plus de req/s |
+| **Real-time backends** | Latence minimale |
+| **Frontend tooling** | Build 50-70% plus rapide |
+| **Nouveaux projets** | Dev experience optimale |
+| **Projets TypeScript** | Support natif, zéro config |
+
+### ⚠️ Quand rester prudent
+
+- **Enterprise legacy** - Node.js reste plus stable pour systèmes critiques existants
+- **Écosystème spécifique** - Certains packages natifs C++ peuvent avoir des incompatibilités
+- **Équipes non formées** - Courbe d'apprentissage pour les équipes habituées à Node.js
+
+> **Consensus 2025** : Bun est production-ready pour la majorité des cas d'usage, mais Node.js reste le choix le plus sûr pour les applications enterprise critiques nécessitant une stabilité maximale.
+
+## Qui utilise Bun en production ?
+
+**Entreprises notables :**
+- 🤖 **Anthropic** - Claude Code CLI
+- 🏢 Plusieurs startups tech (non divulguées publiquement)
+- 💻 Plus de **5 millions de téléchargements/mois**
+
+**Feedback terrain :**
+- 📉 **50-70% de réduction** des temps de build
+- ⚡ Cold starts divisés par 4
+- 🎯 Dev experience significativement améliorée
+
+## Bun vs Node.js vs Deno : Le verdict 2025
+
+### Tableau comparatif complet
+
+| Critère | Bun | Node.js | Deno |
+|---------|-----|---------|------|
+| **Performance runtime** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
+| **Vitesse installation** | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
+| **Startup time** | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ |
+| **Écosystème npm** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| **Stabilité prod** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| **Tooling intégré** | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ |
+| **TypeScript natif** | ⭐⭐⭐⭐⭐ | ⭐ | ⭐⭐⭐⭐⭐ |
+
+### Recommandations par profil
+
+**Choisissez Bun si :**
+- 🚀 Vous démarrez un **nouveau projet** en 2025
+- ⚡ La **performance** est critique (APIs, real-time)
+- 🎯 Vous voulez le **meilleur DX** (Developer Experience)
+- 💰 Vous développez des **functions serverless**
+- 🔧 Vous aimez le **tooling all-in-one**
+
+**Restez sur Node.js si :**
+- 🏢 Application **enterprise** critique existante
+- 📦 Dépendance à des **packages natifs** spécifiques
+- 👥 Équipe très habituée à l'écosystème Node.js
+- 🛡️ Besoin de **stabilité maximale** prouvée
+
+**Choisissez Deno si :**
+- 🔒 La **sécurité** est votre priorité #1
+- 🌐 Vous développez pour **Deno Deploy**
+- 📜 Vous préférez les **standards web** (pas de npm)
+
+## Architecture technique : Sous le capot
+
+### Stack technique Bun
+
+\`\`\`
+┌─────────────────────────────────────┐
+│         Bun Runtime (Zig)           │
+├─────────────────────────────────────┤
+│   JavaScriptCore (Apple)            │ ← Moteur JS
+├─────────────────────────────────────┤
+│   libuv + custom I/O                │ ← Event loop
+├─────────────────────────────────────┤
+│   mimalloc (Allocateur mémoire)    │ ← Gestion mémoire
+└─────────────────────────────────────┘
+\`\`\`
+
+**Pourquoi Zig ?**
+- 🔧 Gestion manuelle de la mémoire (performance)
+- ⚡ Compilation ultra-rapide
+- 🛡️ Safety sans garbage collection overhead
+- 🎯 Contrôle bas niveau pour optimisations
+
+### APIs natives Bun
+
+\`\`\`typescript
+// API Bun.file - Lecture fichiers ultra-rapide
+const file = Bun.file("data.json");
+const json = await file.json();
+
+// API Bun.write - Écriture optimisée
+await Bun.write("output.txt", "Hello Bun!");
+
+// API Bun.hash - Hashing natif
+const hash = Bun.hash("sha256", "data");
+
+// API Bun.password - Bcrypt intégré
+const hashed = await Bun.password.hash("mypassword");
+\`\`\`
+
+## L'avenir de Bun : Roadmap 2025-2026
+
+**Fonctionnalités en développement :**
+- 🔌 **Windows native** - Support natif complet (déjà stable en 2025)
+- 🧩 **Plugin system** - Extensibilité pour bundler/runtime
+- 📊 **Observability** - Métriques et profiling intégrés
+- 🔄 **Hot reload** amélioré - Dev experience encore meilleure
+- 🌐 **Edge runtime** - Optimisations pour edge computing
+
+## Mon avis de développeur : Faut-il adopter Bun ?
+
+Après avoir analysé en profondeur Bun, testé ses performances et exploré sa documentation, **ma réponse est un OUI nuancé** :
+
+### ✅ OUI pour :
+- **Tous les nouveaux projets en 2025** - Aucune raison de ne pas essayer
+- **Side projects et prototypes** - Gain de temps énorme
+- **APIs et backends** - Performance exceptionnelle
+- **Frontend tooling** - Builds ultra-rapides
+
+### ⚠️ PRUDENCE pour :
+- **Systèmes critiques existants** - Node.js reste plus sûr
+- **Grosses équipes non formées** - Temps de formation nécessaire
+- **Packages exotiques** - Vérifier la compatibilité
+
+> **Ma prédiction** : D'ici 2026, Bun aura capturé **20-30% du marché** des nouveaux projets JavaScript. C'est le **Rust de l'écosystème JS** - personne ne peut ignorer ses performances.
+
+## Ressources pour aller plus loin
+
+**Documentation officielle :**
+- 🌐 [bun.sh](https://bun.sh) - Site officiel
+- 📚 [bun.sh/docs](https://bun.sh/docs) - Documentation complète
+- 💬 [GitHub - oven-sh/bun](https://github.com/oven-sh/bun) - Repository officiel et communauté
+
+**Tutoriels et guides :**
+- 🎥 Vidéos YouTube sur "Bun.js tutorial"
+- 📝 Articles Dev.to avec tag #bunjs
+- 🧪 [Guides Bun](https://bun.sh/guides) - Tutoriels et exemples pratiques
+
+## Conclusion : La révolution est en marche
+
+Bun n'est pas qu'un runtime JavaScript de plus - **c'est une refonte complète** de l'écosystème JavaScript pensée pour 2025 et au-delà.
+
+**Les 3 raisons d'adopter Bun maintenant :**
+
+1. 🚀 **Performance inégalée** - 3-7x plus rapide selon les métriques
+2. 🎯 **Developer Experience** - All-in-one, zéro configuration
+3. 🌍 **Production-ready** - 5M+ downloads/mois, utilisé par Anthropic
+
+**Mon conseil final :** Testez Bun sur votre **prochain side project**. Vous ne reviendrez probablement jamais en arrière. Le futur du JavaScript est rapide, simple et s'appelle Bun.
+
+L'ère de l'attente de \`npm install\` pendant 2 minutes est **révolue**. Bienvenue dans l'ère Bun. ⚡🚀`,
     category: "Développement",
-    publishedAt: "2025-01-13",
-    readingTime: "5 min",
-    coverImage: "/images/blog/react-19-cover.png",
-    tags: ["React", "Actions", "Server Components", "Hooks", "Performance"],
+    publishedAt: "2025-10-20",
+    readingTime: "12 min",
+    coverImage: "/images/blog/bun-runtime-cover.png",
+    tags: [
+      "Bun",
+      "JavaScript",
+      "Node.js",
+      "Performance",
+      "Runtime",
+      "TypeScript",
+      "Tooling",
+    ],
     author: {
       name: "Hermann MOUSSAVOU",
       avatar: "/images/ck-class.png",
     },
-    isHighlighted: false,
+    isHighlighted: true,
   },
   {
     slug: "ia-2025-modeles-revolutionnaires",
@@ -557,398 +828,127 @@ En 2025, votre portfolio doit être **votre meilleur argument technique** - il p
     isHighlighted: true,
   },
   {
-    slug: "bun-runtime-javascript-revolution-2025",
-    title:
-      "Bun 2025 : Le runtime JavaScript qui détrône Node.js avec 7x plus de vitesse",
+    slug: "react-19-nouveautes-revolutionnaires",
+    title: "React 19 : Les nouveautés révolutionnaires qui changent la donne",
     excerpt:
-      "Découvrez Bun, le runtime all-in-one qui révolutionne l'écosystème JavaScript : 3-4x plus rapide que Node.js, package manager ultra-rapide, bundler intégré. Installation, benchmarks et guide complet pour adopter Bun en production.",
-    content: `L'écosystème JavaScript vit une **révolution silencieuse mais explosive** en 2025. Avec plus de **5 millions de téléchargements mensuels** et l'adoption par des géants comme Anthropic (Claude Code CLI), **Bun** s'impose comme le runtime JavaScript de nouvelle génération qui change radicalement les règles du jeu.
+      "Découvrez les fonctionnalités game-changer de React 19 : Actions, nouveaux hooks, Server Components stables et React Compiler. Une révolution pour l'expérience développeur.",
+    content: `React 19 vient de sortir le **5 décembre 2024** et marque une étape historique dans l'évolution de cette bibliothèque incontournable. Après plus de deux ans depuis React 18, cette version majeure apporte des innovations révolutionnaires qui transforment radicalement notre façon de développer des applications web modernes.
 
-## Qu'est-ce que Bun ? Le couteau suisse JavaScript
+## Les Actions : LA révolution de React 19
 
-Bun est bien plus qu'un simple runtime JavaScript - c'est un **toolkit all-in-one complet** qui regroupe en un seul exécutable tout ce dont vous avez besoin pour développer des applications JavaScript/TypeScript modernes.
+Les **Actions** représentent LA révolution de cette version. Fini le cauchemar de la gestion manuelle des états de formulaires ! React 19 introduit un système d'Actions qui automatise :
 
-### L'écosystème 4-en-1
+- ✅ La gestion des états \`pending\`
+- ✅ La gestion des erreurs
+- ✅ Les mises à jour optimistes
+- ✅ Les requêtes séquentielles
 
-| Outil | Fonction | Remplace |
-|-------|----------|----------|
-| **Runtime** | Exécution JS/TS | Node.js, Deno |
-| **Package Manager** | Installation dépendances | npm, yarn, pnpm |
-| **Bundler** | Build & optimisation | Webpack, Vite, esbuild |
-| **Test Runner** | Tests unitaires | Jest, Vitest |
+Plus besoin de jongler avec \`useState\` pour chaque état de soumission - **React s'occupe de tout**.
 
-**Un seul binaire, zéro configuration.** C'est la promesse de Bun : \`bun install\`, \`bun run\`, \`bun test\`, \`bun build\` - tout fonctionne immédiatement.
+### Exemple pratique
 
-> **Note technique** : Bun est écrit en **Zig** (pas en C++ ou Rust) et utilise **JavaScriptCore** d'Apple (le moteur de Safari) au lieu de V8 de Chrome.
+\`\`\`javascript
+function MyForm() {
+  const [state, formAction] = useActionState(submitAction);
 
-## Pourquoi Bun change absolument tout ?
-
-### 1. Des performances qui explosent les compteurs 🚀
-
-Les benchmarks 2025 sont sans appel :
-
-**HTTP Server Performance:**
-- 🏆 **Bun** : 52,000+ requêtes/seconde
-- 🥈 Deno : ~22,000 req/s
-- 🥉 Node.js : ~13,000 req/s
-
-**Rendu React côté serveur:**
-- Bun : **68,000 req/s** (x4.8 vs Node.js)
-- Deno : ~29,000 req/s (x2 vs Node.js)
-- Node.js : ~14,000 req/s
-
-### 2. Installation de packages : du jamais vu
-
-\`\`\`bash
-# Projet Next.js avec ~1,100 packages
-
-bun install    # 8.6s  ⚡
-npm install    # 57.4s 🐌
-
-# Bun est 6.7x plus rapide !
+  return (
+    <form action={formAction}>
+      <input name="email" />
+      <button disabled={state.pending}>
+        {state.pending ? "Envoi..." : "Envoyer"}
+      </button>
+    </form>
+  );
+}
 \`\`\`
 
-**Temps d'installation comparés (2025)** :
+## Les nouveaux hooks qui changent tout
 
-| Package Manager | Projet React (~350 packages) | Projet Next.js (~1.1k packages) |
-|-----------------|------------------------------|----------------------------------|
-| **bun install** | 3.4s | 8.6s |
-| pnpm | 8.2s | 24.1s |
-| yarn | 12.5s | 38.9s |
-| npm | 19.6s | 57.4s |
+Les **nouveaux hooks** changent complètement la donne pour l'UX asynchrone :
 
-> **Le secret** : Bun traite l'installation comme un **problème de programmation système**, pas comme un problème JavaScript. C'est écrit en Zig avec une gestion manuelle de la mémoire.
+1. **\`useActionState\`** - Simplifie la gestion des états liés aux Actions
+2. **\`useFormStatus\`** - Permet de suivre l'état d'un formulaire sans prop drilling
+3. **\`useOptimistic\`** - Rend les mises à jour optimistes d'une simplicité déconcertante
+4. **\`use()\`** - Révolutionne la gestion des promesses et du contexte
 
-### 3. Startup ultra-rapide grâce à JavaScriptCore
+> **Note importante** : Le hook \`use()\` peut être appelé conditionnellement, contrairement aux autres hooks !
 
-**JavaScriptCore vs V8** :
+## Server Components en version stable
+
+Les **Server Components** passent enfin en version stable ! Cette architecture révolutionnaire améliore drastiquement les performances initiales en réduisant le bundle JavaScript côté client.
+
+**Avantages clés :**
+- 📦 Bundle JavaScript réduit de 40-60%
+- ⚡ Chargement initial ultra-rapide
+- 🔄 Intégration native avec Next.js
+- 🎯 Séparation client/serveur optimale
+
+L'intégration native avec les frameworks full-stack comme Next.js ouvre des perspectives inédites pour les applications moderne où le serveur et le client collaborent harmonieusement.
+
+## React Compiler : L'optimisation automatique
+
+**React Compiler** change la philosophie même du développement React. Bien qu'encore en version bêta, cet outil expérimental optimise automatiquement vos applications en gérant la mémoisation sans intervention manuelle.
+
+### Ce que ça change
+
+| Avant | Après |
+|-------|-------|
+| \`useMemo\` partout | ❌ Plus nécessaire |
+| \`useCallback\` manuel | ✅ Automatique |
+| \`memo()\` sur les composants | ✅ Géré par le compilateur |
+
+Adieu \`useMemo\`, \`useCallback\` et \`memo\` - le compilateur détecte et optimise les re-renders de façon intelligente.
+
+## Simplification des refs
+
+L'**amélioration des refs** simplifie considérablement l'API. **\`forwardRef\` devient obsolète !**
+
+Les refs sont maintenant des props normales pour les composants fonctionnels :
 
 \`\`\`typescript
-// Temps de démarrage (cold start)
-
-Bun (JavaScriptCore)    // 0.2s - ⚡ Ultra rapide
-Deno (V8 optimisé)      // 0.5s - Rapide
-Node.js (V8)            // 1.2s - Standard
-\`\`\`
-
-**Pourquoi JavaScriptCore ?**
-- ✅ Démarrage **4x plus rapide** que V8
-- ✅ **Moins de mémoire** consommée (footprint réduit)
-- ✅ Optimisé pour les **cold starts** (serverless parfait)
-- ✅ Moteur prouvé (Safari depuis 2008)
-
-## Guide complet : Migrer vers Bun en 2025
-
-### Installation en 30 secondes
-
-**Linux / macOS :**
-\`\`\`bash
-curl -fsSL https://bun.sh/install | bash
-\`\`\`
-
-**Windows (PowerShell) :**
-\`\`\`powershell
-powershell -c "irm bun.sh/install.ps1 | iex"
-\`\`\`
-
-**Alternative avec npm :**
-\`\`\`bash
-npm install -g bun
-\`\`\`
-
-**Vérification :**
-\`\`\`bash
-bun --version
-# Bun 1.3+ en 2025
-\`\`\`
-
-### Créer votre premier projet Bun
-
-\`\`\`bash
-# Initialiser un nouveau projet
-bun init
-
-# Bun va créer automatiquement :
-# - package.json
-# - index.ts (avec support TypeScript natif)
-# - .gitignore
-# - tsconfig.json
-\`\`\`
-
-### Exemple : Serveur HTTP ultra-rapide
-
-\`\`\`typescript
-// server.ts
-const server = Bun.serve({
-  port: 3000,
-  fetch(req) {
-    const url = new URL(req.url);
-
-    if (url.pathname === "/") {
-      return new Response("Hello from Bun! 🚀");
-    }
-
-    if (url.pathname === "/json") {
-      return Response.json({
-        message: "Bun is blazingly fast",
-        timestamp: Date.now()
-      });
-    }
-
-    return new Response("404 Not Found", { status: 404 });
-  },
+// Avant React 19
+const MyInput = forwardRef((props, ref) => {
+  return <input ref={ref} {...props} />;
 });
 
-console.log(\`🚀 Server running at http://localhost:\${server.port}\`);
+// React 19 - Beaucoup plus simple !
+function MyInput({ ref, ...props }) {
+  return <input ref={ref} {...props} />;
+}
 \`\`\`
 
-**Lancer le serveur :**
-\`\`\`bash
-bun run server.ts
-# ✅ TypeScript exécuté directement, pas de transpilation !
-\`\`\`
+Cette simplification élimine une complexité inutile et rend le code plus naturel et lisible.
 
-### Migrer un projet Node.js existant
+## Meilleurs messages d'erreur
 
-\`\`\`bash
-# 1. Installer les dépendances avec Bun
-bun install
+Les **améliorations de l'hydratation** et des erreurs de développement transforment l'expérience de debugging. Les messages d'erreur sont désormais :
 
-# 2. Remplacer npm run par bun run
-bun run dev
-bun run build
-bun run test
+- 🎯 **Précis** - Vous indiquent exactement où est le problème
+- 🔍 **Actionables** - Suggèrent comment corriger
+- 📍 **Localisés** - Pointent la ligne de code exacte
 
-# 3. Vos scripts package.json fonctionnent sans modification !
-\`\`\`
+Fini les messages cryptiques qui vous font perdre des heures !
 
-**Compatibilité :** Bun est compatible à **90%+ avec Node.js** et supporte nativement :
-- ✅ Node.js APIs (\`fs\`, \`path\`, \`http\`, etc.)
-- ✅ npm packages (~2 millions de packages compatibles)
-- ✅ \`node_modules\` standard
-- ✅ CommonJS et ES Modules
+## Conclusion : L'avenir commence maintenant
 
-## Bundler intégré : Adieu Webpack, Vite, esbuild
+React 19 n'est pas qu'une simple mise à jour - **c'est une transformation** qui positionne React comme l'écosystème de référence pour les applications web de demain.
 
-\`\`\`typescript
-// build.ts
-await Bun.build({
-  entrypoints: ['./src/index.ts'],
-  outdir: './dist',
-  minify: true,
-  splitting: true, // Code splitting automatique
-  target: 'browser',
-  format: 'esm',
-});
-\`\`\`
+Chaque fonctionnalité a été pensée pour :
+- ⚡ Réduire la complexité
+- 🚀 Améliorer les performances
+- 💎 Sublimer l'expérience développeur
 
-**Avantages du bundler Bun :**
-- 🔥 **50-70% plus rapide** que Webpack
-- 📦 Minification intégrée
-- 🎯 Tree-shaking automatique
-- ⚡ Hot Module Replacement (HMR)
-- 🚀 Zero config par défaut
-
-## Test Runner : Jest sans la lenteur
-
-\`\`\`typescript
-// math.test.ts
-import { expect, test, describe } from "bun:test";
-
-describe("Math operations", () => {
-  test("addition", () => {
-    expect(2 + 2).toBe(4);
-  });
-
-  test("async operation", async () => {
-    const result = await fetch("https://api.github.com");
-    expect(result.ok).toBe(true);
-  });
-});
-\`\`\`
-
-\`\`\`bash
-bun test
-# ✅ Tests ~3x plus rapides que Jest
-# ✅ Pas besoin de babel/ts-jest
-# ✅ TypeScript natif
-\`\`\`
-
-## Cas d'usage en production (2025)
-
-### ✅ Quand utiliser Bun
-
-| Use Case | Pourquoi Bun excelle |
-|----------|----------------------|
-| **Serverless / Edge** | Cold starts ultra-rapides |
-| **APIs haute performance** | 3-4x plus de req/s |
-| **Real-time backends** | Latence minimale |
-| **Frontend tooling** | Build 50-70% plus rapide |
-| **Nouveaux projets** | Dev experience optimale |
-| **Projets TypeScript** | Support natif, zéro config |
-
-### ⚠️ Quand rester prudent
-
-- **Enterprise legacy** - Node.js reste plus stable pour systèmes critiques existants
-- **Écosystème spécifique** - Certains packages natifs C++ peuvent avoir des incompatibilités
-- **Équipes non formées** - Courbe d'apprentissage pour les équipes habituées à Node.js
-
-> **Consensus 2025** : Bun est production-ready pour la majorité des cas d'usage, mais Node.js reste le choix le plus sûr pour les applications enterprise critiques nécessitant une stabilité maximale.
-
-## Qui utilise Bun en production ?
-
-**Entreprises notables :**
-- 🤖 **Anthropic** - Claude Code CLI
-- 🏢 Plusieurs startups tech (non divulguées publiquement)
-- 💻 Plus de **5 millions de téléchargements/mois**
-
-**Feedback terrain :**
-- 📉 **50-70% de réduction** des temps de build
-- ⚡ Cold starts divisés par 4
-- 🎯 Dev experience significativement améliorée
-
-## Bun vs Node.js vs Deno : Le verdict 2025
-
-### Tableau comparatif complet
-
-| Critère | Bun | Node.js | Deno |
-|---------|-----|---------|------|
-| **Performance runtime** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| **Vitesse installation** | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
-| **Startup time** | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ |
-| **Écosystème npm** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **Stabilité prod** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| **Tooling intégré** | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ |
-| **TypeScript natif** | ⭐⭐⭐⭐⭐ | ⭐ | ⭐⭐⭐⭐⭐ |
-
-### Recommandations par profil
-
-**Choisissez Bun si :**
-- 🚀 Vous démarrez un **nouveau projet** en 2025
-- ⚡ La **performance** est critique (APIs, real-time)
-- 🎯 Vous voulez le **meilleur DX** (Developer Experience)
-- 💰 Vous développez des **functions serverless**
-- 🔧 Vous aimez le **tooling all-in-one**
-
-**Restez sur Node.js si :**
-- 🏢 Application **enterprise** critique existante
-- 📦 Dépendance à des **packages natifs** spécifiques
-- 👥 Équipe très habituée à l'écosystème Node.js
-- 🛡️ Besoin de **stabilité maximale** prouvée
-
-**Choisissez Deno si :**
-- 🔒 La **sécurité** est votre priorité #1
-- 🌐 Vous développez pour **Deno Deploy**
-- 📜 Vous préférez les **standards web** (pas de npm)
-
-## Architecture technique : Sous le capot
-
-### Stack technique Bun
-
-\`\`\`
-┌─────────────────────────────────────┐
-│         Bun Runtime (Zig)           │
-├─────────────────────────────────────┤
-│   JavaScriptCore (Apple)            │ ← Moteur JS
-├─────────────────────────────────────┤
-│   libuv + custom I/O                │ ← Event loop
-├─────────────────────────────────────┤
-│   mimalloc (Allocateur mémoire)    │ ← Gestion mémoire
-└─────────────────────────────────────┘
-\`\`\`
-
-**Pourquoi Zig ?**
-- 🔧 Gestion manuelle de la mémoire (performance)
-- ⚡ Compilation ultra-rapide
-- 🛡️ Safety sans garbage collection overhead
-- 🎯 Contrôle bas niveau pour optimisations
-
-### APIs natives Bun
-
-\`\`\`typescript
-// API Bun.file - Lecture fichiers ultra-rapide
-const file = Bun.file("data.json");
-const json = await file.json();
-
-// API Bun.write - Écriture optimisée
-await Bun.write("output.txt", "Hello Bun!");
-
-// API Bun.hash - Hashing natif
-const hash = Bun.hash("sha256", "data");
-
-// API Bun.password - Bcrypt intégré
-const hashed = await Bun.password.hash("mypassword");
-\`\`\`
-
-## L'avenir de Bun : Roadmap 2025-2026
-
-**Fonctionnalités en développement :**
-- 🔌 **Windows native** - Support natif complet (déjà stable en 2025)
-- 🧩 **Plugin system** - Extensibilité pour bundler/runtime
-- 📊 **Observability** - Métriques et profiling intégrés
-- 🔄 **Hot reload** amélioré - Dev experience encore meilleure
-- 🌐 **Edge runtime** - Optimisations pour edge computing
-
-## Mon avis de développeur : Faut-il adopter Bun ?
-
-Après avoir analysé en profondeur Bun, testé ses performances et exploré sa documentation, **ma réponse est un OUI nuancé** :
-
-### ✅ OUI pour :
-- **Tous les nouveaux projets en 2025** - Aucune raison de ne pas essayer
-- **Side projects et prototypes** - Gain de temps énorme
-- **APIs et backends** - Performance exceptionnelle
-- **Frontend tooling** - Builds ultra-rapides
-
-### ⚠️ PRUDENCE pour :
-- **Systèmes critiques existants** - Node.js reste plus sûr
-- **Grosses équipes non formées** - Temps de formation nécessaire
-- **Packages exotiques** - Vérifier la compatibilité
-
-> **Ma prédiction** : D'ici 2026, Bun aura capturé **20-30% du marché** des nouveaux projets JavaScript. C'est le **Rust de l'écosystème JS** - personne ne peut ignorer ses performances.
-
-## Ressources pour aller plus loin
-
-**Documentation officielle :**
-- 🌐 [bun.sh](https://bun.sh) - Site officiel
-- 📚 [bun.sh/docs](https://bun.sh/docs) - Documentation complète
-- 💬 [GitHub - oven-sh/bun](https://github.com/oven-sh/bun) - Repository officiel et communauté
-
-**Tutoriels et guides :**
-- 🎥 Vidéos YouTube sur "Bun.js tutorial"
-- 📝 Articles Dev.to avec tag #bunjs
-- 🧪 [Guides Bun](https://bun.sh/guides) - Tutoriels et exemples pratiques
-
-## Conclusion : La révolution est en marche
-
-Bun n'est pas qu'un runtime JavaScript de plus - **c'est une refonte complète** de l'écosystème JavaScript pensée pour 2025 et au-delà.
-
-**Les 3 raisons d'adopter Bun maintenant :**
-
-1. 🚀 **Performance inégalée** - 3-7x plus rapide selon les métriques
-2. 🎯 **Developer Experience** - All-in-one, zéro configuration
-3. 🌍 **Production-ready** - 5M+ downloads/mois, utilisé par Anthropic
-
-**Mon conseil final :** Testez Bun sur votre **prochain side project**. Vous ne reviendrez probablement jamais en arrière. Le futur du JavaScript est rapide, simple et s'appelle Bun.
-
-L'ère de l'attente de \`npm install\` pendant 2 minutes est **révolue**. Bienvenue dans l'ère Bun. ⚡🚀`,
+**L'avenir du web frontend s'écrit maintenant avec React 19 !** 🎉`,
     category: "Développement",
-    publishedAt: "2025-10-20",
-    readingTime: "12 min",
-    coverImage: "/images/blog/bun-runtime-cover.png",
-    tags: [
-      "Bun",
-      "JavaScript",
-      "Node.js",
-      "Performance",
-      "Runtime",
-      "TypeScript",
-      "Tooling",
-    ],
+    publishedAt: "2025-01-13",
+    readingTime: "5 min",
+    coverImage: "/images/blog/react-19-cover.png",
+    tags: ["React", "Actions", "Server Components", "Hooks", "Performance"],
     author: {
       name: "Hermann MOUSSAVOU",
       avatar: "/images/ck-class.png",
     },
-    isHighlighted: true,
+    isHighlighted: false,
   },
 ];
 
