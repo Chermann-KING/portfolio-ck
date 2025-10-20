@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Highlight.js theme for code syntax highlighting */
+@import 'highlight.js/styles/github-dark.css';
+
 @layer base {
   :root {
     --background: 0 0% 97%;
@@ -89,4 +92,29 @@
 
 body {
   cursor: default;
+}
+
+/* Custom styles for Markdown content */
+.markdown-content {
+  @apply text-foreground;
+}
+
+/* Override highlight.js styles for better theme integration */
+.markdown-content pre {
+  @apply !bg-card border-border;
+}
+
+.markdown-content code {
+  @apply !bg-accent;
+}
+
+/* Responsive tables */
+.markdown-content table {
+  @apply block overflow-x-auto whitespace-nowrap;
+}
+
+@media (max-width: 768px) {
+  .markdown-content table {
+    @apply text-sm;
+  }
 }

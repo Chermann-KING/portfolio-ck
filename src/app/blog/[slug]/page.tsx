@@ -6,6 +6,7 @@ import { BackButton } from "@/components/ui/BackButton";
 import { getBlogPostBySlug, getAllBlogPosts } from "@/lib/blog-data";
 import { constructMetadata } from "@/lib/metadata";
 import { Calendar, Clock, User } from "lucide-react";
+import MarkdownContent from "@/components/MarkdownContent";
 import type { Metadata } from "next";
 
 export const dynamicParams = true;
@@ -158,13 +159,7 @@ export default async function BlogPostPage({
       {/* Contenu de l'article */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 sm:gap-12">
         <article className="lg:col-span-3">
-          <div className="prose prose-lg sm:prose-xl dark:prose-invert max-w-none">
-            {post.content.map((paragraph, index) => (
-              <p key={index} className="mb-6 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+          <MarkdownContent content={post.content} />
         </article>
 
         {/* Sidebar */}
