@@ -508,8 +508,7 @@ TypeScript 5.7 est une **release de stabilité** qui améliore la DX sans casser
 **Avez-vous déjà migré vers TypeScript 5.7 ?** Partagez votre retour d'expérience dans notre [serveur Discord](https://discord.gg/RbmcyUKNSJ) !
 `,
   category: "Développement",
-  // publishedAt: "2025-11-17",
-  publishedAt: "2025-10-17",
+  publishedAt: "2025-11-17",
   readingTime: "18 min",
   coverImage: "/images/blog/typescript-5-7-cover.png",
   tags: [
