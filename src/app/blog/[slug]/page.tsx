@@ -191,7 +191,7 @@ export default async function BlogPostPage({
               <div>
                 <p className="font-medium">{post.author.name}</p>
                 <p className="text-sm text-muted-foreground">
-                  Développeur Full Stack
+                  {post.author.role}
                 </p>
               </div>
             </div>

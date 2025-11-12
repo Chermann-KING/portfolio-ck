@@ -45,7 +45,7 @@ export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
-  content: string; // Changed from string[] to string for Markdown support
+  content: string;
   category: "Développement" | "Design" | "Tutoriels" | "Veille Tech";
   publishedAt: string;
   readingTime: string;
@@ -54,6 +54,7 @@ export interface BlogPost {
   author: {
     name: string;
     avatar: string;
+    role: string;
   };
   isHighlighted: boolean;
 }
