@@ -101,7 +101,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
           // Images - Optimized with next/image
           img: ({ src, alt }) => {
             // Pour les images externes (http/https), on garde <img>
-            if (src?.startsWith("http")) {
+            if (typeof src === "string" && src.startsWith("http")) {
               return (
                 <img
                   src={src}
@@ -114,7 +114,7 @@ export default function MarkdownContent({ content }: MarkdownContentProps) {
             return (
               <div className="relative w-full my-8">
                 <Image
-                  src={src || ""}
+                  src={typeof src === "string" ? src : ""}
                   alt={alt || ""}
                   width={1200}
                   height={675}
