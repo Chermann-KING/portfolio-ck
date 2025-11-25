@@ -12,6 +12,17 @@ export async function rateLimit(
   limit: number = 5, // 5 requêtes maximum
   windowMs: number = 60 * 60 * 1000 // par heure
 ): Promise<RateLimitResult> {
+  // Si Redis n'est pas disponible, on laisse passer sans rate limiting
+  if (!redis) {
+    console.warn("Redis non disponible - Rate limiting désactivé");
+    return {
+      success: true,
+      limit,
+      remaining: limit,
+      reset: Date.now() + windowMs,
+    };
+  }
+
   const key = `ratelimit:${identifier}`;
   const now = Date.now();
   const windowSize = windowMs;
