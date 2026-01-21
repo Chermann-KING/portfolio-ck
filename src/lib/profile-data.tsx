@@ -1,6 +1,18 @@
 import { UserProfile } from "@/types";
 import { Github, Linkedin, Instagram } from "lucide-react";
 
+// Date de début de carrière
+const CAREER_START_DATE = new Date("2018-03-01");
+
+// Calcule les années d'expérience depuis une date donnée
+function getYearsOfExperience(startDate: Date): string {
+  const now = new Date();
+  const years = Math.floor(
+    (now.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 365.25),
+  );
+  return `${years}+`;
+}
+
 // Données des compétences
 const skillsData = {
   "Front-end": [
@@ -43,7 +55,7 @@ export async function getProfileData(): Promise<UserProfile> {
     bio: "Développeur full-stack passionné et innovant, combinant une expertise avancée en front-end avec des compétences solides en back-end. Impliqué dans des projets innovants, je conçois des applications web performantes et scalables. Curieux, créatif, résolument collaboratif et orienté solutions, je suis déterminé à transformer vos idées en produits numériques de qualité.",
     avatar: "/images/ck-class.png",
     stats: {
-      yearsExperience: "3+",
+      yearsExperience: getYearsOfExperience(CAREER_START_DATE),
       projectsCount: "12+",
       clientsCount: "6+",
     },
