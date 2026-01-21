@@ -1,5 +1,9 @@
 import { UserProfile } from "@/types";
-import { Github, Linkedin, Instagram } from "lucide-react";
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  InstagramIcon,
+} from "@/components/icons/BrandIcons";
 
 // Date de début de carrière
 const CAREER_START_DATE = new Date("2018-03-01");
@@ -62,17 +66,17 @@ export async function getProfileData(): Promise<UserProfile> {
     skills: skillsData,
     social: [
       {
-        icon: <Github size={30} />,
+        icon: <GitHubIcon size={30} />,
         platform: "Github",
         url: "https://github.com/Chermann-KING",
       },
       {
-        icon: <Linkedin size={30} />,
+        icon: <LinkedInIcon size={30} />,
         platform: "Linkedin",
         url: "https://www.linkedin.com/in/hermann-moussavou/",
       },
       {
-        icon: <Instagram size={30} />,
+        icon: <InstagramIcon size={30} />,
         platform: "Instagram",
         url: "https://www.instagram.com/chermann_king/",
       },
