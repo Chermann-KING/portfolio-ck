@@ -56,7 +56,7 @@ export async function getProfileData(): Promise<UserProfile> {
       address: "Charleroi, Belgique",
       imgMap: "/images/location-light-2.png",
     },
-    bio: "Développeur full-stack passionné et innovant, combinant une expertise avancée en front-end avec des compétences solides en back-end. Impliqué dans des projets innovants, je conçois des applications web performantes et scalables. Curieux, créatif, résolument collaboratif et orienté solutions, je suis déterminé à transformer vos idées en produits numériques de qualité.",
+    bio: "Développeur fullstack passionné et innovant, combinant une expertise avancée en frontend avec des compétences solides en backend. Impliqué dans des projets innovants, je conçois des applications web/mobile performantes et scalables. Curieux, créatif, résolument collaboratif et orienté solutions, je suis déterminé à transformer vos idées en produits numériques de qualité.",
     avatar: "/images/ck-class.png",
     stats: {
       yearsExperience: getYearsOfExperience(CAREER_START_DATE),

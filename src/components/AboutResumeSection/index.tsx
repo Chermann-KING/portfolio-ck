@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { classNames } from "@/lib/utils";
 import { Card } from "../ui/Card";
 
@@ -15,16 +16,6 @@ export const AboutResumeSection = ({
 }: AboutResumeSectionProps) => {
   const [activeTab, setActiveTab] = useState<Tab>("about");
 
-  const handleResumeClick = () => {
-    // Déclencher uniquement le téléchargement du PDF
-    const link = document.createElement("a");
-    link.href = "/cv-hermann-moussavou.pdf";
-    link.download = "CV-Hermann-MOUSSAVOU.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <Card className="p-4 sm:p-6">
       <div className="space-y-4 sm:space-y-6">
@@ -33,18 +24,18 @@ export const AboutResumeSection = ({
             onClick={() => setActiveTab("about")}
             className={classNames(
               "text-lg sm:text-xl font-semibold transition-colors",
-              activeTab === "about" ? "text-text" : "text-muted-foreground"
+              activeTab === "about" ? "text-text" : "text-muted-foreground",
             )}
           >
             À propos de moi
           </button>
-          <button
-            onClick={handleResumeClick}
+          <Link
+            href="/resume"
             className="text-base sm:text-xl transition-colors hover:text-primary text-muted-foreground font-medium"
           >
             <span className="hidden sm:inline">Curriculum vitae</span>
             <span className="sm:hidden">CV</span>
-          </button>
+          </Link>
         </div>
 
         <div className="transition-all duration-300">
