@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Card } from "./ui/Card";
+import { AnimatedCard } from "@/lib/AnimatedCard";
+import { Button } from "@/components/ui/Button";
+import { ArrowRight } from "lucide-react";
 import { getHighlightedProjects } from "@/lib/projects";
 import { useEffect, useState } from "react";
 import type { Project } from "@/lib/projects";
@@ -15,22 +17,32 @@ export function PortfolioSection() {
   }, []);
 
   return (
-    <Card>
-      <section className="p-4 sm:p-6 space-y-3 sm:space-y-4">
-        <div className="flex justify-between items-center">
-          <h2 className="text-lg sm:text-xl font-bold">Projets</h2>
-          <Link
-            href="/projects"
-            className="text-base sm:text-xl text-muted-foreground hover:text-text transition-colors"
-          >
-            Tout voir
-          </Link>
+    <AnimatedCard direction="up" delay={200}>
+      <section className="space-y-6 sm:space-y-8">
+        {/* En-tête */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6">
+          <div className="space-y-2">
+            <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase flex items-center gap-2">
+              <span className="w-6 h-px bg-muted-foreground inline-block" />
+              Réalisations
+            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-foreground">
+              On travaille <em className="not-italic text-secondary">ensemble ?</em>
+            </h2>
+          </div>
+          <Button variant="outline" asChild className="w-full sm:w-auto">
+            <Link href="/projects" className="flex items-center gap-2">
+              Tout voir
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Button>
         </div>
 
+        {/* Grille */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {projects.map((project) => (
             <Link href={`/projects/${project.slug}`} key={project.slug}>
-              <div className="group relative aspect-[4/3] rounded-xl overflow-hidden">
+              <div className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
                 <Image
                   src={project.coverImage}
                   alt={project.title}
@@ -53,6 +65,6 @@ export function PortfolioSection() {
           ))}
         </div>
       </section>
-    </Card>
+    </AnimatedCard>
   );
 }

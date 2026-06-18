@@ -8,21 +8,21 @@ type SkillsSectionProps = {
 
 const categoryStyles = {
   "Front-end": {
-    bg: "bg-emerald-500/10",
-    text: "text-emerald-500",
-    hover: "hover:bg-emerald-500/20",
+    bg: "bg-secondary/10",
+    text: "text-secondary",
+    hover: "hover:bg-secondary/20",
     icon: "🌐",
   },
   "Back-end": {
-    bg: "bg-blue-500/10",
-    text: "text-blue-500",
-    hover: "hover:bg-blue-500/20",
+    bg: "bg-secondary/10",
+    text: "text-secondary",
+    hover: "hover:bg-secondary/20",
     icon: "⚙️",
   },
   "DevOps & Outils": {
-    bg: "bg-purple-500/10",
-    text: "text-purple-500",
-    hover: "hover:bg-purple-500/20",
+    bg: "bg-secondary/10",
+    text: "text-secondary",
+    hover: "hover:bg-secondary/20",
     icon: "🛠️",
   },
 };
@@ -49,9 +49,9 @@ export function SkillsSection({ skills = {} }: SkillsSectionProps) {
           const style = categoryStyles[
             category as keyof typeof categoryStyles
           ] || {
-            bg: "bg-gray-500/10",
-            text: "text-gray-500",
-            hover: "hover:bg-gray-500/20",
+            bg: "bg-secondary/10",
+            text: "text-secondary",
+            hover: "hover:bg-secondary/20",
             icon: "💡",
           };
 
@@ -75,7 +75,7 @@ export function SkillsSection({ skills = {} }: SkillsSectionProps) {
                       <Badge
                         key={skill}
                         variant="default"
-                        className={`${style.text} border-current text-xs py-0.5 px-1.5 sm:px-2`}
+                        className="text-xs py-0.5 px-1.5 sm:px-2"
                       >
                         {skill}
                       </Badge>

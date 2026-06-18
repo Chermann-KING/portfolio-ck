@@ -17,7 +17,7 @@ export const StatCard: FC<StatCardProps> = ({
 }) => {
   return (
     <div
-      className={`${bgColor} ${textColor} rounded-xl sm:rounded-2xl p-2 sm:p-3 lg:p-4 xl:p-6 flex flex-col items-center justify-center ${className}`}
+      className={`${bgColor} ${textColor} rounded-xl sm:rounded-2xl p-2 sm:p-3 lg:p-4 xl:p-6 flex flex-col items-center justify-center shadow-lg ${className}`}
     >
       <span className="text-lg sm:text-2xl lg:text-3xl xl:text-5xl font-bold mb-0.5 sm:mb-1 lg:mb-2">
         {count}

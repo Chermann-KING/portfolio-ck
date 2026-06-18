@@ -8,7 +8,8 @@ import Link from "next/link";
 import { AnimatedCard } from "@/lib/AnimatedCard";
 
 const menuItems = [
-  { name: "CV", href: "/resume" },
+  { name: "Services", href: "/#services" },
+  { name: "Réalisations", href: "/projects" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];

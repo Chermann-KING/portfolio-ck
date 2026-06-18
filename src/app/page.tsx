@@ -7,7 +7,7 @@ import { BlogSection } from "@/components/BlogSection";
 import Header from "@/components/Header";
 import { getProfileData } from "@/lib/profile-data";
 import { getHighlightedBlogPosts } from "@/lib/blog-data";
-import { AboutResumeSection } from "@/components/AboutResumeSection";
+import { ServicesSection } from "@/components/ServicesSection";
 import { constructMetadata } from "@/lib/metadata";
 import { Card } from "@/components/ui/Card";
 import { Footer } from "@/components/Footer";
@@ -69,7 +69,6 @@ async function ProfileData() {
             AMÉLIORER
           </Badge>
         </div>
-        <AboutResumeSection aboutContent={profile.bio} />
       </>
     );
   } catch (error) {
@@ -88,6 +87,7 @@ export default async function HomePage() {
         <Hero />
         <ProfileData />
         <PortfolioSection />
+        <ServicesSection />
         <TestimonialsSection testimonials={TestimonialsData.testimonials} />
         <BlogSection posts={blogPosts} />
       </main>

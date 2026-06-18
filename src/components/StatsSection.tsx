@@ -16,7 +16,8 @@ export function StatsSection({ stats }: StatsSectionProps) {
         <StatCard
           count={stats.yearsExperience}
           label="Années d'expérience"
-          bgColor="bg-emerald-500 dark:bg-emerald-500"
+          bgColor="bg-card border border-border/40"
+          textColor="text-amber-600 dark:text-amber-400"
           className="min-h-[80px] sm:min-h-[100px] lg:min-h-[120px]"
         />
       </AnimatedCard>
@@ -24,16 +25,17 @@ export function StatsSection({ stats }: StatsSectionProps) {
         <StatCard
           count={stats.projectsCount}
           label="Projets réalisés"
-          bgColor="bg-amber-400 dark:bg-amber-400"
-          textColor="text-gray-900 dark:text-gray-900"
+          bgColor="bg-card border border-border/40"
+          textColor="text-amber-500 dark:text-amber-300"
           className="min-h-[80px] sm:min-h-[100px] lg:min-h-[120px]"
         />
       </AnimatedCard>
       <AnimatedCard direction="right" delay={200}>
         <StatCard
           count={stats.clientsCount}
-          label="Clients"
-          bgColor="bg-rose-400 dark:bg-rose-400"
+          label="Clients accompagnés"
+          bgColor="bg-card border border-border/40"
+          textColor="text-secondary"
           className="min-h-[80px] sm:min-h-[100px] lg:min-h-[120px]"
         />
       </AnimatedCard>

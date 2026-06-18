@@ -27,7 +27,7 @@ export function Badge({
         variant === "other" &&
           "bg-purple-50/10 text-purple-500 dark:text-purple-400 border-purple-200/20",
         variant === "default" &&
-          "bg-gray-50/10 text-gray-500 dark:text-gray-400 border-gray-200/20",
+          "bg-muted text-muted-foreground border-border",
         className
       )}
       onClick={onClick}

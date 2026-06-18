@@ -20,21 +20,6 @@ export const BlogCard: FC<BlogCardProps> = ({ post }) => {
     });
   };
 
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case "Développement":
-        return "bg-blue-500 dark:bg-blue-500 text-white dark:text-white";
-      case "Design":
-        return "bg-purple-500 dark:bg-purple-500 text-white dark:text-white";
-      case "Tutoriels":
-        return "bg-green-500 dark:bg-green-500 text-white dark:text-white";
-      case "Veille Tech":
-        return "bg-orange-500 dark:bg-orange-500 text-white dark:text-white";
-      default:
-        return "bg-gray-500 dark:bg-gray-500 text-white dark:text-white";
-    }
-  };
-
   return (
     <Link href={`/blog/${post.slug}`} className="group">
       <Card className="overflow-hidden h-full transition-all duration-300 hover:shadow-xl hover:scale-[1.02] p-0">
@@ -49,9 +34,7 @@ export const BlogCard: FC<BlogCardProps> = ({ post }) => {
             priority={post.isHighlighted}
           />
           <div className="absolute top-3 left-3">
-            <Badge
-              className={`${getCategoryColor(post.category)} font-semibold`}
-            >
+            <Badge variant="default" className="font-semibold">
               {post.category}
             </Badge>
           </div>
@@ -84,12 +67,12 @@ export const BlogCard: FC<BlogCardProps> = ({ post }) => {
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5 sm:gap-2">
             {post.tags.slice(0, 3).map((tag) => (
-              <Badge key={tag} variant="other" className="text-xs">
+              <Badge key={tag} variant="default" className="text-xs">
                 {tag}
               </Badge>
             ))}
             {post.tags.length > 3 && (
-              <Badge variant="other" className="text-xs">
+              <Badge variant="default" className="text-xs">
                 +{post.tags.length - 3}
               </Badge>
             )}

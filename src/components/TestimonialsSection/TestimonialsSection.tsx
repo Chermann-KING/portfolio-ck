@@ -2,7 +2,6 @@
 
 import React, { FC, useEffect, useRef, useState } from "react";
 import { Star } from "lucide-react";
-import { Card } from "../ui/Card";
 import Image from "next/image";
 
 interface Testimonial {
@@ -89,14 +88,22 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
   const offsetPercentage = (currentIndex * 100) / visibleCards;
 
   return (
-    <Card>
-      <div className="container mx-auto px-4">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-          Ce qu&apos;ils disent de moi
+    <div className="space-y-6 sm:space-y-8">
+      {/* En-tête */}
+      <div className="space-y-2">
+        <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase flex items-center gap-2">
+          <span className="w-6 h-px bg-muted-foreground inline-block" />
+          Feedback
+        </p>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-foreground">
+          La preuve <em className="not-italic text-secondary">par eux.</em>
         </h2>
+      </div>
+
+      <div>
         <div
           ref={containerRef}
-          className="relative overflow-hidden mt-4"
+          className="relative overflow-x-hidden pb-4"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -113,7 +120,7 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
                 className="flex-none w-full sm:w-1/2 lg:w-1/3 px-4"
                 style={{ minWidth: `${100 / visibleCards}%` }}
               >
-                <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                <div className="bg-card border border-border/40 rounded-xl sm:rounded-2xl p-6 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 h-full">
                   <div className="flex items-center mb-4">
                     {testimonial.image ? (
                       <Image
@@ -124,17 +131,17 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
                         className="rounded-full mr-4"
                       />
                     ) : (
-                      <div className="w-12 h-12 min-w-12 min-h-12 rounded-full bg-gray-300 dark:bg-gray-600 mr-4 flex items-center justify-center">
-                        <span className="text-xl font-semibold text-gray-600 dark:text-gray-300">
+                      <div className="w-12 h-12 min-w-12 min-h-12 rounded-full bg-muted mr-4 flex items-center justify-center">
+                        <span className="text-xl font-semibold text-muted-foreground">
                           {testimonial.name.charAt(0)}
                         </span>
                       </div>
                     )}
                     <div>
-                      <h3 className="font-semibold text-gray-900 dark:text-white">
+                      <h3 className="font-semibold text-foreground">
                         {testimonial.name}
                       </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">
+                      <p className="text-sm text-muted-foreground">
                         {testimonial.role} chez {testimonial.company}
                       </p>
                     </div>
@@ -151,7 +158,7 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
                       />
                     ))}
                   </div>
-                  <blockquote className="text-gray-700 dark:text-gray-300 italic mb-2">
+                  <blockquote className="text-muted-foreground italic mb-2">
                     {testimonial.content.map((paragraph, idx) => (
                       <p key={idx} className="mb-2">
                         {paragraph}
@@ -182,6 +189,6 @@ export const TestimonialsSection: FC<TestimonialsSectionProps> = ({
           ))}
         </div>
       </div>
-    </Card>
+    </div>
   );
 };

@@ -10,7 +10,7 @@ interface FormData {
   email: string;
   company?: string;
   message: string;
-  honeypot?: string;
+  website?: string; // honeypot
 }
 
 export default function ContactPage() {
@@ -24,7 +24,7 @@ export default function ContactPage() {
     email: "",
     company: "",
     message: "",
-    honeypot: "", // Champ invisible pour les bots
+    website: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -41,7 +41,7 @@ export default function ContactPage() {
     }
 
     // Vérification du honeypot
-    if (formData.honeypot) {
+    if (formData.website) {
       setError("Une erreur est survenue.");
       return;
     }
@@ -106,7 +106,7 @@ export default function ContactPage() {
         email: "",
         company: "",
         message: "",
-        honeypot: "",
+        website: "",
       });
       if (formRef.current) formRef.current.reset();
     } catch (error) {
@@ -167,6 +167,7 @@ export default function ContactPage() {
                   id="name"
                   name="name"
                   required
+                  minLength={2}
                   maxLength={100}
                   value={formData.name}
                   onChange={(e) =>
@@ -225,6 +226,7 @@ export default function ContactPage() {
                   id="message"
                   name="message"
                   required
+                  minLength={10}
                   maxLength={5000}
                   value={formData.message}
                   onChange={(e) =>
@@ -235,16 +237,21 @@ export default function ContactPage() {
                 />
               </div>
 
-              {/* Champ honeypot invisible */}
-              <div className="hidden">
+              {/* Honeypot — piège pour les bots, invisible pour les humains */}
+              <div
+                style={{ position: "absolute", left: "-9999px", top: "-9999px" }}
+                aria-hidden="true"
+              >
+                <label htmlFor="website">Website</label>
                 <input
                   type="text"
-                  name="honeypot"
+                  id="website"
+                  name="website"
                   tabIndex={-1}
                   autoComplete="off"
-                  value={formData.honeypot}
+                  value={formData.website}
                   onChange={(e) =>
-                    setFormData({ ...formData, honeypot: e.target.value })
+                    setFormData({ ...formData, website: e.target.value })
                   }
                 />
               </div>
