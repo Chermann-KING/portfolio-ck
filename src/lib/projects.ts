@@ -80,7 +80,70 @@ const projects: Project[] = [
     isPublic: true,
     isHighlighted: true,
   },
-
+  {
+    slug: "ifumb",
+    title: "IFUMB",
+    shortDescription:
+      "Réseau généalogique pensé pour les cultures africaines et afro-descendantes : unions multiples, identité culturelle et collaboration familiale",
+    context:
+      "Les outils de généalogie classiques modélisent mal les réalités familiales africaines : unions multiples, parents inconnus, appartenance à une tribu, un clan ou une ethnie. IFUMB permet de construire son arbre en tenant compte de ces réalités, de l'enrichir à plusieurs et de relier des arbres entre eux. Après une première version en React et NestJS, j'ai mené la migration complète de l'application vers Next.js 16, en Clean Architecture.",
+    challenges:
+      "La migration devait se faire sur la base de données de production partagée avec l'ancienne application, sans jamais la mettre en danger : écritures désactivables, tests exécutés sur une base isolée et migrations reprises à l'identique. Sur le plan fonctionnel, les difficultés venaient de la modélisation des liens de parenté (unions multiples, lignées, ancêtres communs), de la collaboration sur un même arbre avec un circuit de propositions et de validation, et de la fusion de branches entre arbres liés.",
+    technologies: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "PostgreSQL",
+      "Prisma",
+      "Auth.js",
+      "Supabase",
+      "Playwright",
+    ],
+    duration: "Mars 2026 – aujourd'hui",
+    role: "Concepteur & développeur Full Stack",
+    team: "Projet personnel",
+    keyPoints: [
+      "Graphe familial interactif, vue des lignées, chemin de parenté et ancêtres communs",
+      "Gestion des unions multiples, des parents inconnus et de l'identité culturelle",
+      "Collaboration sur un arbre : invitations, propositions de modifications et validation",
+      "Suggestions et demandes de connexion entre arbres, fusion de branches",
+      "Exploration des arbres publics et recherche de membres",
+      "Migration vers Next.js 16 menée sur la base de production, sans risque pour les données existantes",
+      "Couverture de tests du domaine supérieure à 90 %, tests E2E avec contrôle d'accessibilité",
+    ],
+    coverImage: "/images/projects/ifumb/cover.png",
+    gallery: [
+      {
+        url: "/images/projects/ifumb/kinship.png",
+        caption:
+          "Chemin de parenté calculé entre deux membres, à travers une union polygame",
+      },
+      {
+        url: "/images/projects/ifumb/ancestors.png",
+        caption: "Recherche des ancêtres communs",
+      },
+      {
+        url: "/images/projects/ifumb/member.png",
+        caption: "Fiche membre : clan, culture et région d'origine",
+      },
+      {
+        url: "/images/projects/ifumb/pending.png",
+        caption: "Propositions d'un collaborateur en attente de validation",
+      },
+      {
+        url: "/images/projects/ifumb/history.png",
+        caption: "Journal des modifications de l'arbre",
+      },
+      {
+        url: "/images/projects/ifumb/explore.png",
+        caption: "Exploration des arbres publics par culture",
+      },
+    ],
+    liveUrl: "https://ifumb-nu.vercel.app/",
+    isPublic: true,
+    isHighlighted: true,
+  },
   {
     slug: "vienecheckin",
     title: "VieneCheckIn",
@@ -205,7 +268,7 @@ const projects: Project[] = [
     ],
     githubUrl: "https://github.com/Chermann-KING/i18n-chat",
     isPublic: true,
-    isHighlighted: true,
+    isHighlighted: false,
   },
   {
     slug: "ciaei-semen-africa",
@@ -345,70 +408,6 @@ const projects: Project[] = [
       },
     ],
     isPublic: false,
-    isHighlighted: false,
-  },
-  {
-    slug: "ifumb",
-    title: "IFUMB",
-    shortDescription:
-      "Réseau généalogique pensé pour les cultures africaines et afro-descendantes : unions multiples, identité culturelle et collaboration familiale",
-    context:
-      "Les outils de généalogie classiques modélisent mal les réalités familiales africaines : unions multiples, parents inconnus, appartenance à une tribu, un clan ou une ethnie. IFUMB permet de construire son arbre en tenant compte de ces réalités, de l'enrichir à plusieurs et de relier des arbres entre eux. Après une première version en React et NestJS, j'ai mené la migration complète de l'application vers Next.js 16, en Clean Architecture.",
-    challenges:
-      "La migration devait se faire sur la base de données de production partagée avec l'ancienne application, sans jamais la mettre en danger : écritures désactivables, tests exécutés sur une base isolée et migrations reprises à l'identique. Sur le plan fonctionnel, les difficultés venaient de la modélisation des liens de parenté (unions multiples, lignées, ancêtres communs), de la collaboration sur un même arbre avec un circuit de propositions et de validation, et de la fusion de branches entre arbres liés.",
-    technologies: [
-      "Next.js 16",
-      "React 19",
-      "TypeScript",
-      "Tailwind CSS 4",
-      "PostgreSQL",
-      "Prisma",
-      "Auth.js",
-      "Supabase",
-      "Playwright",
-    ],
-    duration: "Mars 2026 – aujourd'hui",
-    role: "Concepteur & développeur Full Stack",
-    team: "Projet personnel",
-    keyPoints: [
-      "Graphe familial interactif, vue des lignées, chemin de parenté et ancêtres communs",
-      "Gestion des unions multiples, des parents inconnus et de l'identité culturelle",
-      "Collaboration sur un arbre : invitations, propositions de modifications et validation",
-      "Suggestions et demandes de connexion entre arbres, fusion de branches",
-      "Exploration des arbres publics et recherche de membres",
-      "Migration vers Next.js 16 menée sur la base de production, sans risque pour les données existantes",
-      "Couverture de tests du domaine supérieure à 90 %, tests E2E avec contrôle d'accessibilité",
-    ],
-    coverImage: "/images/projects/ifumb/cover.png",
-    gallery: [
-      {
-        url: "/images/projects/ifumb/kinship.png",
-        caption:
-          "Chemin de parenté calculé entre deux membres, à travers une union polygame",
-      },
-      {
-        url: "/images/projects/ifumb/ancestors.png",
-        caption: "Recherche des ancêtres communs",
-      },
-      {
-        url: "/images/projects/ifumb/member.png",
-        caption: "Fiche membre : clan, culture et région d'origine",
-      },
-      {
-        url: "/images/projects/ifumb/pending.png",
-        caption: "Propositions d'un collaborateur en attente de validation",
-      },
-      {
-        url: "/images/projects/ifumb/history.png",
-        caption: "Journal des modifications de l'arbre",
-      },
-      {
-        url: "/images/projects/ifumb/explore.png",
-        caption: "Exploration des arbres publics par culture",
-      },
-    ],
-    liveUrl: "https://ifumb-nu.vercel.app/",
-    isPublic: true,
     isHighlighted: false,
   },
   {
