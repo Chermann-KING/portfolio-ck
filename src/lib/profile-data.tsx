@@ -61,7 +61,7 @@ export async function getProfileData(): Promise<UserProfile> {
     stats: {
       yearsExperience: getYearsOfExperience(CAREER_START_DATE),
       projectsCount: "15+",
-      clientsCount: "6+",
+      clientsCount: "7+",
     },
     skills: skillsData,
     social: [
