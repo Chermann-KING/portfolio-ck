@@ -60,7 +60,7 @@ export async function getProfileData(): Promise<UserProfile> {
     avatar: "/images/ck-class.png",
     stats: {
       yearsExperience: getYearsOfExperience(CAREER_START_DATE),
-      projectsCount: "12+",
+      projectsCount: "15+",
       clientsCount: "6+",
     },
     skills: skillsData,

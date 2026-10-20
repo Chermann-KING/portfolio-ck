@@ -1,0 +1,13 @@
+packages:
+  - .
+
+# reason: pnpm ≥ 10 bloque les scripts d'installation par défaut ; seuls ceux-ci sont autorisés.
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
+
+# reason: versions corrigées de dépendances transitives de Next.js (pnpm audit, octobre 2026).
+overrides:
+  browserslist: ">=4.28.7"
+  source-map-js: ">=1.2.2"
+  baseline-browser-mapping: ">=2.11.0"

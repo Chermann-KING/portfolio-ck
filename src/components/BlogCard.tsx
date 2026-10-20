@@ -31,7 +31,7 @@ export const BlogCard: FC<BlogCardProps> = ({ post }) => {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"
-            priority={post.isHighlighted}
+            preload={post.isHighlighted}
           />
           <div className="absolute top-3 left-3">
             <Badge variant="default" className="font-semibold">
