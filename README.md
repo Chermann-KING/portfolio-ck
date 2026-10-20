@@ -91,56 +91,41 @@ src/
 
 ### Prérequis
 
-- **Node.js** 18.0+
-- **npm** ou **yarn** ou **pnpm**
+- **Node.js** 22.12+ (LTS)
+- **pnpm** 12 — seul gestionnaire autorisé (`corepack enable` active la version épinglée dans `package.json`)
 
 ### Installation
 
 ```bash
-# Cloner le repository
 git clone https://github.com/hermann-moussavou/portfolio-ck.git
 cd portfolio-ck
-
-# Installer les dépendances
-npm install
-# ou
-yarn install
-# ou
 pnpm install
 ```
 
 ### Développement
 
 ```bash
-# Lancer le serveur de développement
-npm run dev
-# ou
-yarn dev
-# ou
-pnpm dev
-
-# Le site sera accessible sur http://localhost:3000
+pnpm dev        # http://localhost:3000
 ```
 
 ### Build de production
 
 ```bash
-# Créer le build optimisé
-npm run build
-
-# Démarrer en production
-npm run start
+pnpm build
+pnpm start
 ```
 
-### Linting
+### Qualité
 
 ```bash
-# Vérifier le code
-npm run lint
-
-# Corriger automatiquement
-npm run lint --fix
+pnpm lint            # ESLint
+pnpm typecheck       # TypeScript
+pnpm test            # tests unitaires et de composants (Vitest)
+pnpm test:coverage   # avec couverture
+pnpm test:e2e        # tests de bout en bout et accessibilité (Playwright + axe, port 3100)
 ```
+
+Avant le premier `pnpm test:e2e` : `pnpm exec playwright install chromium`.
 
 ## 📊 Projets Présentés
 
