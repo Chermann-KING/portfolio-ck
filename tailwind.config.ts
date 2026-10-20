@@ -44,6 +44,19 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        lightbox: {
+          backdrop: "hsl(var(--lightbox-backdrop) / <alpha-value>)",
+          foreground: "hsl(var(--lightbox-foreground) / <alpha-value>)",
+        },
+      },
+      keyframes: {
+        "lightbox-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+      },
+      animation: {
+        "lightbox-in": "lightbox-in 150ms ease-out",
       },
       borderRadius: {
         lg: "var(--radius)",

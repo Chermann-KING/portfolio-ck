@@ -33,6 +33,9 @@
     --chart-4: 210 47% 53%;
     --chart-5: 0 103% 60%;
     --radius: 1rem;
+    /* Visionneuse : toujours sombre, quel que soit le thème, pour mettre les images en valeur. */
+    --lightbox-backdrop: 240 14% 4%;
+    --lightbox-foreground: 0 0% 98%;
   }
 
   .dark {
