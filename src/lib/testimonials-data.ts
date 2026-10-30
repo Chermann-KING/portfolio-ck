@@ -12,6 +12,16 @@ export interface TestimonialsData {
 export const TestimonialsData: TestimonialsData = {
   testimonials: [
     {
+      name: "Taliane POATY",
+      role: "CEO & Art Director",
+      company: "NZONZI Studio",
+      content: [
+        "Nous avons été impressionnés par le professionnalisme d’Hermann. Il nous a accompagnés à chaque étape de la création de notre site web, en tenant compte de notre ligne éditoriale et de nos besoins spécifiques.",
+        "Le résultat : un site à la fois esthétique, performant et intuitif, aussi bien pour notre équipe que pour nos clients. Sa prise en main est simple et agréable. Nous sommes pleinement satisfaits du travail réalisé et recommandons vivement son accompagnement !",
+      ],
+      rating: 5,
+    },
+    {
       name: "Landry Ndong Aboghé",
       role: "Co-founder",
       company: "CompanyViene",
