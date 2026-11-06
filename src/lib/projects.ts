@@ -140,7 +140,7 @@ const projects: Project[] = [
         caption: "Exploration des arbres publics par culture",
       },
     ],
-    liveUrl: "https://ifumb-nu.vercel.app/",
+    liveUrl: "https://www.ifumb.app/",
     isPublic: true,
     isHighlighted: true,
   },
